@@ -207,7 +207,7 @@
 
           <dl class="hero__stats reveal">
             <div class="stat">
-              <dt class="stat__value"><span class="counter" data-target="7" data-suffix="+">0</span></dt>
+              <dt class="stat__value"><span class="counter" data-target="8" data-suffix="+">0</span></dt>
               <dd class="stat__label">Software Solutions Shipped</dd>
             </div>
             <div class="stat">
@@ -472,7 +472,9 @@
 
         <!-- Portfolio Website -->
         <article class="glass-card project-card reveal">
-          <div class="project-card__media" data-code="06" aria-hidden="true"></div>
+          <div class="project-card__media" data-code="06">
+            <img src="assets/images/portfolio-img.png" alt="Portfolio website homepage" loading="lazy" />
+          </div>
           <div class="project-card__body">
             <h3 class="project-card__title">Portfolio Website</h3>
             <p class="project-card__desc">This site — a hand-built developer portfolio focused on performance and clean, accessible code.</p>
@@ -509,12 +511,40 @@
           <p class="project-card__desc">A claims management system built for academic staff — full write-up in progress.</p>
         </article>
 
-        <!-- Fundani Tours — awaiting details -->
-        <article class="project-card project-card--empty reveal">
-          <span class="project-card__pending-badge">Details Coming Soon</span>
-          <div class="project-card__empty-icon" aria-hidden="true">🧭</div>
-          <h3 class="project-card__title">Fundani Tours</h3>
-          <p class="project-card__desc">A tourism business platform — full write-up in progress.</p>
+        <!-- Fundani Tours -->
+        <article class="glass-card project-card reveal">
+          <div class="project-card__media" data-code="07">
+            <img src="assets/images/Fundani-img.png" alt="Fundani Tours homepage" loading="lazy" />
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Fundani Tours</h3>
+            <p class="project-card__desc">A travel marketing website for a Destination Management Company, with destination search and dedicated pages for South African parks.</p>
+            <div class="project-card__tech">
+              <span class="tech-chip">HTML</span>
+              <span class="tech-chip">CSS</span>
+              <span class="tech-chip">JavaScript</span>
+            </div>
+            <details class="project-details">
+              <summary>Project Details <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="project-details__body">
+                <h4>Features Implemented</h4>
+                <ul><li>Destination &amp; duration search</li><li>Parks of South Africa info pages</li><li>Multi-page navigation</li></ul>
+                <h4>Architecture</h4>
+                <p>A multi-page marketing site structured around destination discovery — a home page search widget (keyword, destination, and duration filters) links through to dedicated destination and parks content pages.</p>
+                <h4>Challenges</h4>
+                <p>Presenting a large catalogue of destinations and parks in a way that stays easy to browse and filter without overwhelming visitors.</p>
+                <h4>Future Enhancements</h4>
+                <p>Booking and payment integration.</p>
+              </div>
+            </details>
+            <div class="project-card__actions">
+              <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">GitHub</a>
+              <a href="https://fundanitours.co.za/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7Z"/></svg>
+                Live Demo
+              </a>
+             </div>
+          </div>
         </article>
 
         <!-- Future project placeholder -->
