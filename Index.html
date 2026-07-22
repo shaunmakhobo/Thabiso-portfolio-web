@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============ SEO ============ -->
+  <title>Thabiso Makhobo | Graduate Backend Developer — Pretoria, South Africa</title>
+  <meta name="description" content="Thabiso Shaun Charles Makhobo — Graduate Software Developer specialising in backend engineering with C#, ASP.NET Core, SQL and cloud technologies. Based in Pretoria, South Africa, available for junior developer roles and freelance work." />
+  <meta name="keywords" content="Thabiso Makhobo, backend developer, junior developer, software developer Pretoria, C# developer, ASP.NET Core, SQL Server, Kotlin developer, React developer, graduate software engineer South Africa" />
+  <meta name="author" content="Thabiso Shaun Charles Makhobo" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://thabisomakhobo.dev/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Thabiso Makhobo | Graduate Backend Developer" />
+  <meta property="og:description" content="Graduate Software Developer building real-world solutions with C#, ASP.NET Core, SQL and modern web technologies. Available for junior developer opportunities." />
+  <meta property="og:locale" content="en_ZA" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Thabiso Makhobo | Graduate Backend Developer" />
+  <meta name="twitter:description" content="Graduate Software Developer building real-world solutions with C#, ASP.NET Core, SQL and modern web technologies." />
+
+  <!-- Favicon: inline gradient monogram, no external asset required -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%2338bdf8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%2309090f'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='url(%23g)' text-anchor='middle'%3ETM%3C/text%3E%3C/svg%3E" />
+
+  <!-- ============ FONTS ============ -->
+  <!-- Bricolage Grotesque: distinctive display face for headings -->
+  <!-- Plus Jakarta Sans: refined body copy -->
+  <!-- JetBrains Mono: monospace accents for the "developer console" motif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ============ STYLES ============ -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- ============ STRUCTURED DATA ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Thabiso Shaun Charles Makhobo",
+    "jobTitle": "Graduate Software Developer",
+    "description": "Graduate Software Developer specialising in backend engineering with C#, ASP.NET Core, SQL and cloud technologies.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pretoria",
+      "addressCountry": "South Africa"
+    },
+    "email": "mailto:shaunmakhobo@gmail.com",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "IIE Rosebank College"
+    },
+    "sameAs": [
+      "https://github.com/shaunmakhobo",
+      "https://github.com/thabisomakhobo",
+      "https://www.linkedin.com/in/thabiso-makhobo-667527289/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Ambient background layer: gradient mesh + canvas particles (decorative) -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="glow glow--one"></div>
+    <div class="glow glow--two"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- =========================================================
+       MOBILE TOP BAR (visible < 1100px)
+  ========================================================== -->
+  <header class="mobile-bar">
+    <a href="#home" class="mobile-bar__brand">TM<span>.</span></a>
+    <button class="mobile-bar__toggle" id="navToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- =========================================================
+       FIXED LEFT SIDEBAR
+  ========================================================== -->
+  <aside class="sidebar" id="sidebar" data-state="closed">
+
+    <!-- Profile -->
+    <div class="sidebar__profile">
+      <div class="avatar">
+        <img src="assets/images/profileimg.jpeg" alt="Thabiso Makhobo" class="avatar__img" width="92" height="92" />
+        <span class="avatar__ring" aria-hidden="true"></span>
+      </div>
+      <h1 class="sidebar__name">Thabiso Makhobo</h1>
+      <p class="sidebar__title">Graduate Software Developer</p>
+      <span class="status-pill">
+        <span class="status-pill__dot"></span>
+        Available for Opportunities
+      </span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar__nav" aria-label="Primary">
+      <ul>
+        <li><a href="#home" class="nav-link is-active"><span class="nav-index">00</span>Home</a></li>
+        <li><a href="#about" class="nav-link"><span class="nav-index">01</span>About</a></li>
+        <li><a href="#services" class="nav-link"><span class="nav-index">02</span>Services</a></li>
+        <li><a href="#skills" class="nav-link"><span class="nav-index">03</span>Skills</a></li>
+        <li><a href="#experience" class="nav-link"><span class="nav-index">04</span>Experience</a></li>
+        <li><a href="#journey" class="nav-link"><span class="nav-index">05</span>Career Journey</a></li>
+        <li><a href="#projects" class="nav-link"><span class="nav-index">06</span>Projects</a></li>
+        <li><a href="#achievements" class="nav-link"><span class="nav-index">07</span>Achievements</a></li>
+        <li><a href="#contact" class="nav-link"><span class="nav-index">08</span>Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Availability card -->
+    <div class="sidebar__card">
+      <p class="sidebar__card-title">Available for Junior Developer Roles</p>
+      <p class="sidebar__card-text">I am actively seeking opportunities to contribute, learn, and grow as a software developer.</p>
+      <a href="#contact" class="btn btn--gradient btn--block">Hire Me</a>
+    </div>
+
+    <!-- Resume -->
+    <a href="Thabiso_CV_Resume.pdf" download class="btn btn--outline btn--block sidebar__resume">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      Download CV
+    </a>
+
+    <!-- Social links -->
+    <div class="sidebar__socials">
+      <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.66.5 12.03c0 5.1 3.29 9.42 7.86 10.96.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.6.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.68.42.36.78 1.07.78 2.16v3.2c0 .3.21.66.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.66 18.35.5 12 .5Z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/thabiso-makhobo-667527289/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.68H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+      </a>
+      <a href="mailto:shaunmakhobo@gmail.com" class="social-icon" aria-label="Email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="m3 6 9 7 9-7"/></svg>
+      </a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8.5H16l.5-3.5h-3V7.7c0-1 .3-1.7 1.7-1.7H16.6V2.8C16.2 2.75 15.1 2.6 13.8 2.6c-2.7 0-4.6 1.65-4.6 4.7V10H6.6v3.5h2.6V22h4.3Z"/></svg>
+      </a>
+      <a href="https://wa.me/27793761586" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.39a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.07c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.26-.29.58-.36.77-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.14.12.32.02.51-.1.2-.15.32-.3.5-.14.17-.3.38-.43.51-.14.14-.29.29-.13.57.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.15.46.13.63-.05.17-.19.72-.84.92-1.13.19-.28.38-.24.64-.15.26.1 1.66.79 1.94.93.29.14.48.21.55.33.07.12.07.68-.17 1.36Z"/></svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- overlay used on mobile when drawer is open -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================== -->
+  <main id="main-content">
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="section hero">
+      <div class="hero__particles" id="particles" aria-hidden="true"></div>
+
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow reveal"><span class="eyebrow__bracket">&lt;</span>Hello, I'm<span class="eyebrow__bracket">/&gt;</span></p>
+
+          <h2 class="hero__name reveal">Thabiso Shaun<br />Charles Makhobo</h2>
+
+          <p class="hero__role reveal">
+            <span class="hero__role-gradient">Graduate Software Developer</span>
+          </p>
+          <p class="hero__subrole reveal">Backend Developer&nbsp;·&nbsp;Freelancer&nbsp;·&nbsp;Problem Solver</p>
+
+          <p class="hero__desc reveal">
+            I recently graduated with a Diploma in IT Software Development with Distinctions. I build native Android apps with <strong>Kotlin</strong>, backend systems with <strong>C#</strong>, and freelance web solutions with <strong>HTML, CSS, JavaScript and SQL</strong> — powered by <strong>Firebase</strong> and <strong>Supabase</strong> — while actively learning <strong>React</strong>, <strong>TypeScript</strong>, and ASP.NET&nbsp;Core.
+          </p>
+
+          <div class="hero__actions reveal">
+            <a href="#projects" class="btn btn--gradient">View Projects</a>
+            <a href="Thabiso_CV_Resume.pdf" download class="btn btn--outline">Download CV</a>
+          </div>
+
+          <dl class="hero__stats reveal">
+            <div class="stat">
+              <dt class="stat__value"><span class="counter" data-target="20" data-suffix="+">0</span></dt>
+              <dd class="stat__label">Projects Built</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat__value"><span class="counter" data-target="2026">0</span></dt>
+              <dd class="stat__label">Graduate</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat__value"><span class="counter" data-target="1" data-suffix="+">0</span></dt>
+              <dd class="stat__label">Years Experience</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat__value"><span class="counter" data-target="100" data-suffix="%">0</span></dt>
+              <dd class="stat__label">Commitment</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="portrait-frame">
+            <img src="assets/images/profileimg.jpeg" alt="Thabiso Shaun Charles Makhobo" class="portrait-frame__img" />
+            <div class="portrait-frame__grid" aria-hidden="true"></div>
+          </div>
+          <div class="floating-chip floating-chip--1">C#</div>
+          <div class="floating-chip floating-chip--2">SQL</div>
+          <div class="floating-chip floating-chip--3">ASP.NET</div>
+
+          <div class="terminal-card">
+            <div class="terminal-card__bar">
+              <span></span><span></span><span></span>
+              <p>developer.json</p>
+            </div>
+            <pre class="terminal-card__body"><code id="typewriter"></code><span class="cursor-blink">|</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <p class="section-eyebrow reveal">// 01. About Me</p>
+      <h2 class="section-title reveal">Turning ideas into working software</h2>
+
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>I am a passionate software developer who enjoys transforming ideas into practical software solutions.</p>
+          <p>My journey began in 2023 when I started my Diploma in IT Software Development. Since then, I have developed mobile applications, web platforms, desktop applications, and productivity systems.</p>
+          <p>My core stack is <strong>C#</strong> for backend and desktop work, and <strong>Kotlin</strong> for native Android development. For freelance clients I build with <strong>HTML, CSS, JavaScript and SQL</strong>, backed by <strong>Firebase</strong> and <strong>Supabase</strong> for data and authentication. I'm currently expanding into <strong>React</strong> and <strong>TypeScript</strong> to round out my frontend skill set.</p>
+          <p>My long-term goal is to become a Backend Software Engineer specialising in:</p>
+          <ul class="about__list">
+            <li>C#</li>
+            <li>ASP.NET Core</li>
+            <li>SQL Server</li>
+            <li>Azure</li>
+            <li>Cloud Technologies</li>
+          </ul>
+          <p>I am also building freelance software solutions for businesses while continuously improving my technical skills.</p>
+        </div>
+
+        <div class="about__facts reveal">
+          <div class="glass-card fact-card">
+            <span class="fact-card__label">Education</span>
+            <p class="fact-card__value">Diploma in IT Software Development</p>
+            <p class="fact-card__meta">IIE Rosebank College · Graduated 2026 with Distinctions</p>
+          </div>
+          <div class="glass-card fact-card">
+            <span class="fact-card__label">Currently</span>
+            <p class="fact-card__value">T&amp;A Clerk</p>
+            <p class="fact-card__meta">Northam Platinum · Eland Platinum Mine</p>
+          </div>
+          <div class="glass-card fact-card">
+            <span class="fact-card__label">Based in</span>
+            <p class="fact-card__value">Pretoria, South Africa</p>
+            <p class="fact-card__meta">Open to remote &amp; on-site opportunities</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="section">
+      <p class="section-eyebrow reveal">// 02. What I Do</p>
+      <h2 class="section-title reveal">Services</h2>
+
+      <div class="services__grid">
+        <article class="glass-card service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="m8 10 2 2-2 2M13 14h3"/></svg>
+          </div>
+          <h3 class="service-card__title">Backend Development</h3>
+          <p class="service-card__desc">Building scalable backend systems using C#, SQL, and modern development practices.</p>
+        </article>
+
+        <article class="glass-card service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18M4.5 4.5a13 13 0 0 1 15 0M4.5 19.5a13 13 0 0 0 15 0"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <h3 class="service-card__title">Web Development</h3>
+          <p class="service-card__desc">Freelance websites and web apps built with HTML, CSS, JavaScript and SQL — now expanding into React and TypeScript.</p>
+        </article>
+
+        <article class="glass-card service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          </div>
+          <h3 class="service-card__title">Mobile Development</h3>
+          <p class="service-card__desc">Building Android applications using Kotlin, Firebase, and modern mobile technologies.</p>
+        </article>
+
+        <article class="glass-card service-card reveal">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+          </div>
+          <h3 class="service-card__title">Freelance Software Solutions</h3>
+          <p class="service-card__desc">Helping businesses automate processes and establish a strong digital presence.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section">
+      <p class="section-eyebrow reveal">// 03. Technical Skills</p>
+      <h2 class="section-title reveal">Skills &amp; Tools</h2>
+
+      <div class="skills__grid">
+        <div class="glass-card skill-group reveal">
+          <h3 class="skill-group__title">Programming Languages</h3>
+          <ul class="skill-bars">
+            <li><div class="skill-bars__head"><span>C#</span><span>85%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="85"></div></div></li>
+            <li><div class="skill-bars__head"><span>Kotlin</span><span>82%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="82"></div></div></li>
+            <li><div class="skill-bars__head"><span>SQL</span><span>85%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="85"></div></div></li>
+            <li><div class="skill-bars__head"><span>JavaScript</span><span>75%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="75"></div></div></li>
+            <li><div class="skill-bars__head"><span>Java</span><span>80%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="80"></div></div></li>
+            <li><div class="skill-bars__head"><span>PHP</span><span>70%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="70"></div></div></li>
+            <li><div class="skill-bars__head"><span>Python (Basic)</span><span>55%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="55"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="glass-card skill-group reveal">
+          <h3 class="skill-group__title">Frameworks</h3>
+          <ul class="skill-bars">
+            <li><div class="skill-bars__head"><span>ASP.NET Core</span><span>70%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="70"></div></div></li>
+            <li><div class="skill-bars__head"><span>Node.js</span><span>65%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="65"></div></div></li>
+          </ul>
+
+          <h3 class="skill-group__title skill-group__title--spaced">Databases</h3>
+          <ul class="skill-bars">
+            <li><div class="skill-bars__head"><span>SQL Server</span><span>80%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="80"></div></div></li>
+            <li><div class="skill-bars__head"><span>MySQL</span><span>78%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="78"></div></div></li>
+            <li><div class="skill-bars__head"><span>Firebase</span><span>85%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="85"></div></div></li>
+            <li><div class="skill-bars__head"><span>Supabase</span><span>80%</span></div><div class="skill-bars__track"><div class="skill-bars__fill" data-width="80"></div></div></li>
+          </ul>
+        </div>
+
+        <div class="glass-card skill-group skill-group--tools reveal">
+          <h3 class="skill-group__title">Tools &amp; Platforms</h3>
+          <div class="tool-chips">
+            <span class="tool-chip">Visual Studio</span>
+            <span class="tool-chip">VS Code</span>
+            <span class="tool-chip">Android Studio</span>
+            <span class="tool-chip">Git</span>
+            <span class="tool-chip">GitHub</span>
+            <span class="tool-chip">Azure DevOps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section">
+      <p class="section-eyebrow reveal">// 04. Experience</p>
+      <h2 class="section-title reveal">Professional Experience</h2>
+
+      <div class="glass-card experience-card reveal">
+        <div class="experience-card__head">
+          <div>
+            <h3 class="experience-card__role">T&amp;A Clerk</h3>
+            <p class="experience-card__company">Northam Platinum &middot; Eland Platinum Mine</p>
+          </div>
+          <span class="experience-card__duration">January 2026 — Present</span>
+        </div>
+        <ul class="experience-card__list">
+          <li>Employee attendance management</li>
+          <li>Payroll support</li>
+          <li>Data verification</li>
+          <li>Administrative reporting</li>
+          <li>Cross-functional collaboration</li>
+        </ul>
+        <p class="experience-card__quote">
+          &ldquo;Working in a mining environment strengthened my attention to detail, communication skills, and ability to work with operational data.&rdquo;
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CAREER JOURNEY ============ -->
+    <section id="journey" class="section">
+      <p class="section-eyebrow reveal">// 05. Timeline</p>
+      <h2 class="section-title reveal">Career Journey</h2>
+
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <span class="timeline__year">2023</span>
+          <div class="timeline__content">
+            <ul>
+              <li>Started Diploma in IT Software Development</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__year">2024</span>
+          <div class="timeline__content">
+            <ul>
+              <li>Began Android Development</li>
+              <li>Built multiple mobile applications</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__year">2025</span>
+          <div class="timeline__content">
+            <ul>
+              <li>Developed web applications</li>
+              <li>Worked with PHP and MySQL</li>
+              <li>Expanded frontend skills</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__year">2026</span>
+          <div class="timeline__content">
+            <ul>
+              <li>Graduated with Distinctions</li>
+              <li>Joined Northam Platinum</li>
+              <li>Built MOS</li>
+              <li>Building professional portfolio</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline__item timeline__item--present reveal">
+          <span class="timeline__year">Present</span>
+          <div class="timeline__content">
+            <ul>
+              <li>Seeking Junior Developer roles</li>
+              <li>Learning ASP.NET Core</li>
+              <li>Learning SQL Server</li>
+              <li>Building personal projects</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <p class="section-eyebrow reveal">// 06. Featured Work</p>
+      <h2 class="section-title reveal">Projects</h2>
+
+      <div class="projects__grid">
+
+        <!-- SmartSpend -->
+        <article class="glass-card project-card reveal">
+          <div class="project-card__media" data-code="01" aria-hidden="true"></div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">SmartSpend</h3>
+            <p class="project-card__desc">A personal finance Android app for budgeting, expense tracking, and financial analytics.</p>
+            <ul class="project-card__features">
+              <li>Budget Tracking</li>
+              <li>Analytics</li>
+              <li>Reports</li>
+              <li>Authentication</li>
+            </ul>
+            <div class="project-card__tech">
+              <span class="tech-chip">Kotlin</span>
+              <span class="tech-chip">Firebase</span>
+              <span class="tech-chip">Room Database</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">GitHub</a>
+              <span class="btn btn--disabled btn--sm" aria-disabled="true">Live Demo — N/A</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- MOS -->
+        <article class="glass-card project-card reveal">
+          <div class="project-card__media" data-code="02" aria-hidden="true"></div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">MOS <span class="project-card__subtitle">Makhobo Operating System</span></h3>
+            <p class="project-card__desc">A personal life-management platform for goal tracking, finances, and task management.</p>
+            <ul class="project-card__features">
+              <li>Goal Tracking</li>
+              <li>Financial Management</li>
+              <li>Task Management</li>
+              <li>Monthly Reports</li>
+            </ul>
+            <div class="project-card__tech">
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">Supabase</span>
+              <span class="tech-chip">Vite</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">GitHub</a>
+              <span class="btn btn--disabled btn--sm" aria-disabled="true">Live Demo — Private</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Healthify -->
+        <article class="glass-card project-card reveal">
+          <div class="project-card__media" data-code="03" aria-hidden="true"></div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Healthify</h3>
+            <p class="project-card__desc">A health and wellness Android application integrating live data through REST APIs.</p>
+            <div class="project-card__tech">
+              <span class="tech-chip">Kotlin</span>
+              <span class="tech-chip">Firebase</span>
+              <span class="tech-chip">REST APIs</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">GitHub</a>
+              <span class="btn btn--disabled btn--sm" aria-disabled="true">Live Demo — N/A</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Trailer Platform -->
+        <article class="glass-card project-card reveal">
+          <div class="project-card__media" data-code="04" aria-hidden="true"></div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Trailer Platform</h3>
+            <p class="project-card__desc">A rental listing platform connecting tenants and landlords, built with a small development team.</p>
+            <div class="project-card__tech">
+              <span class="tech-chip">HTML</span>
+              <span class="tech-chip">CSS</span>
+              <span class="tech-chip">PHP</span>
+              <span class="tech-chip">MySQL</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">GitHub</a>
+              <a href="https://petersongroup.co.za/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Portfolio Website -->
+        <article class="glass-card project-card reveal">
+          <div class="project-card__media" data-code="05" aria-hidden="true"></div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Portfolio Website</h3>
+            <p class="project-card__desc">This site — a hand-built developer portfolio focused on performance and clean, accessible code.</p>
+            <div class="project-card__tech">
+              <span class="tech-chip">HTML</span>
+              <span class="tech-chip">CSS</span>
+              <span class="tech-chip">JavaScript</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">GitHub</a>
+              <a href="#home" class="btn btn--ghost btn--sm">You're Looking At It</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Future project placeholder -->
+        <article class="project-card project-card--empty reveal">
+          <div class="project-card__empty-icon" aria-hidden="true">+</div>
+          <h3 class="project-card__title">Next Project</h3>
+          <p class="project-card__desc">Reserved for what I build next.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements" class="section">
+      <p class="section-eyebrow reveal">// 07. Milestones</p>
+      <h2 class="section-title reveal">Achievements</h2>
+
+      <div class="achievements__grid">
+        <div class="glass-card achievement-card reveal">
+          <span class="achievement-card__icon">🎓</span>
+          <p>Diploma in IT Software Development</p>
+        </div>
+        <div class="glass-card achievement-card reveal">
+          <span class="achievement-card__icon">🏅</span>
+          <p>Graduated with Distinctions</p>
+        </div>
+        <div class="glass-card achievement-card reveal">
+          <span class="achievement-card__icon">💻</span>
+          <p>20+ Projects Completed</p>
+        </div>
+        <div class="glass-card achievement-card reveal">
+          <span class="achievement-card__icon">💼</span>
+          <p>Professional Experience</p>
+        </div>
+        <div class="glass-card achievement-card reveal">
+          <span class="achievement-card__icon">🚀</span>
+          <p>MOS Successfully Built</p>
+        </div>
+        <div class="glass-card achievement-card reveal">
+          <span class="achievement-card__icon">📚</span>
+          <p>Continuous Learning</p>
+        </div>
+      </div>
+
+      <!-- ============ CURRENTLY LEARNING ============ -->
+      <div class="learning">
+        <p class="section-eyebrow reveal">// Currently Learning</p>
+        <h3 class="section-subtitle reveal">Rounding out the stack</h3>
+
+        <div class="learning__grid">
+          <div class="glass-card learning-card reveal">
+            <div class="learning-card__head"><span>React</span><span>55%</span></div>
+            <div class="skill-bars__track"><div class="skill-bars__fill" data-width="55"></div></div>
+          </div>
+          <div class="glass-card learning-card reveal">
+            <div class="learning-card__head"><span>TypeScript</span><span>45%</span></div>
+            <div class="skill-bars__track"><div class="skill-bars__fill" data-width="45"></div></div>
+          </div>
+          <div class="glass-card learning-card reveal">
+            <div class="learning-card__head"><span>ASP.NET Core</span><span>60%</span></div>
+            <div class="skill-bars__track"><div class="skill-bars__fill" data-width="60"></div></div>
+          </div>
+          <div class="glass-card learning-card reveal">
+            <div class="learning-card__head"><span>SQL Server</span><span>55%</span></div>
+            <div class="skill-bars__track"><div class="skill-bars__fill" data-width="55"></div></div>
+          </div>
+          <div class="glass-card learning-card reveal">
+            <div class="learning-card__head"><span>Entity Framework</span><span>50%</span></div>
+            <div class="skill-bars__track"><div class="skill-bars__fill" data-width="50"></div></div>
+          </div>
+          <div class="glass-card learning-card reveal">
+            <div class="learning-card__head"><span>Clean Architecture</span><span>45%</span></div>
+            <div class="skill-bars__track"><div class="skill-bars__fill" data-width="45"></div></div>
+          </div>
+          <div class="glass-card learning-card reveal">
+            <div class="learning-card__head"><span>Azure</span><span>40%</span></div>
+            <div class="skill-bars__track"><div class="skill-bars__fill" data-width="40"></div></div>
+          </div>
+          <div class="glass-card learning-card reveal">
+            <div class="learning-card__head"><span>Docker</span><span>35%</span></div>
+            <div class="skill-bars__track"><div class="skill-bars__fill" data-width="35"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ TESTIMONIALS ============ -->
+      <div class="testimonials">
+        <p class="section-eyebrow reveal">// What Others Say</p>
+        <h3 class="section-subtitle reveal">Testimonials</h3>
+
+        <div class="testimonials__grid">
+          <div class="glass-card testimonial-card reveal">
+            <span class="testimonial-card__quote">&ldquo;</span>
+            <p class="testimonial-card__badge">Coming Soon</p>
+            <p class="testimonial-card__role">Lecturer Testimonial</p>
+          </div>
+          <div class="glass-card testimonial-card reveal">
+            <span class="testimonial-card__quote">&ldquo;</span>
+            <p class="testimonial-card__badge">Coming Soon</p>
+            <p class="testimonial-card__role">Supervisor Testimonial</p>
+          </div>
+          <div class="glass-card testimonial-card reveal">
+            <span class="testimonial-card__quote">&ldquo;</span>
+            <p class="testimonial-card__badge">Coming Soon</p>
+            <p class="testimonial-card__role">Client Testimonial</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <p class="section-eyebrow reveal">// 08. Get In Touch</p>
+      <h2 class="section-title reveal">Let's build something amazing together.</h2>
+
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <a href="mailto:shaunmakhobo@gmail.com" class="contact-item">
+            <span class="contact-item__icon">✉</span>
+            <span><span class="contact-item__label">Email</span>shaunmakhobo@gmail.com</span>
+          </a>
+          <a href="tel:+27793761586" class="contact-item">
+            <span class="contact-item__icon">☎</span>
+            <span><span class="contact-item__label">Phone</span>+27 79 376 1586</span>
+          </a>
+          <a href="https://www.linkedin.com/in/thabiso-makhobo-667527289/" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-item__icon">in</span>
+            <span><span class="contact-item__label">LinkedIn</span>thabiso-makhobo-667527289</span>
+          </a>
+          <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-item__icon">&lt;/&gt;</span>
+            <span><span class="contact-item__label">GitHub</span>github.com/shaunmakhobo</span>
+          </a>
+          <a href="https://wa.me/27793761586" target="_blank" rel="noopener noreferrer" class="contact-item">
+            <span class="contact-item__icon">◎</span>
+            <span><span class="contact-item__label">WhatsApp</span>+27 79 376 1586</span>
+          </a>
+          <div class="contact-item contact-item--static">
+            <span class="contact-item__icon">📍</span>
+            <span><span class="contact-item__label">Location</span>Pretoria, South Africa</span>
+          </div>
+
+          <a href="Thabiso_CV_Resume.pdf" download class="btn btn--outline btn--block contact__cv-btn">Download CV</a>
+        </div>
+
+        <form class="glass-card contact-form reveal" id="contactForm" novalidate>
+          <div class="contact-form__field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="contact-form__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="contact-form__field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--gradient btn--block">Send Message</button>
+          <p class="contact-form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <p class="footer__main">Designed and Developed by Thabiso Makhobo.</p>
+    <p class="footer__sub">Building software one project at a time.</p>
+    <p class="footer__year">&copy; <span id="year"></span> Thabiso Shaun Charles Makhobo</p>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
