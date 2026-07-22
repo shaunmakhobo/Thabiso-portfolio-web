@@ -148,29 +148,6 @@ function initCounters() {
 }
 
 /* -----------------------------------------------------------------
-   Skill / learning progress bars
------------------------------------------------------------------ */
-function initSkillBars() {
-  const bars = document.querySelectorAll('.skill-bars__fill');
-  if (!bars.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          el.style.width = `${el.dataset.width}%`;
-          obs.unobserve(el);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-
-  bars.forEach((bar) => observer.observe(bar));
-}
-
-/* -----------------------------------------------------------------
    Hero terminal card: typewriter effect
 ----------------------------------------------------------------- */
 function initTypewriter() {
@@ -179,8 +156,8 @@ function initTypewriter() {
 
   const snippet = `const developer = {
   name: "Thabiso Makhobo",
-  role: "Backend Developer",
-  stack: ["C#", "SQL", "ASP.NET"],
+  role: "Backend & Mobile Developer",
+  stack: ["C#", "Kotlin", "SQL"],
   status: "available"
 };`;
 
@@ -328,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initScrollReveal();
   initCounters();
-  initSkillBars();
   initTypewriter();
   initParticles();
   initContactForm();

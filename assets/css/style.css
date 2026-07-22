@@ -10,18 +10,16 @@
    7.  Mobile Top Bar
    8.  Sidebar
    9.  Hero
-   10. About
-   11. Services
+   10. Fact Card (Education)
+   11. Specializations (Services)
    12. Skills
    13. Experience
-   14. Career Journey (Timeline)
-   15. Projects
-   16. Achievements / Learning / Testimonials
-   17. Contact
-   18. Footer / Back-to-top
-   19. Scroll Reveal Animations
-   20. Responsive Breakpoints
-   21. Accessibility & Reduced Motion
+   14. Projects
+   15. Contact
+   16. Footer / Back-to-top
+   17. Scroll Reveal Animations
+   18. Responsive Breakpoints
+   19. Accessibility & Reduced Motion
 ================================================================= */
 
 /* ---------------------------------------------------------------
@@ -627,11 +625,37 @@ main,
   font-weight: 600;
 }
 
+.hero__badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.location-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  border: 1px solid var(--border-strong);
+  border-radius: 100px;
+  color: var(--text-secondary);
+}
+
 .hero__actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.hero__actions--secondary {
   margin-bottom: 56px;
+}
+.hero__actions--secondary .btn svg {
+  flex-shrink: 0;
 }
 
 .hero__stats {
@@ -798,49 +822,8 @@ main,
 }
 
 /* ---------------------------------------------------------------
-   10. ABOUT
+   10. FACT CARD (used by Education)
 --------------------------------------------------------------- */
-.about__grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 48px;
-}
-
-.about__text p {
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-}
-.about__text strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.about__list {
-  margin: 8px 0 16px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.about__list li {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  color: var(--text-primary);
-  padding-left: 20px;
-  position: relative;
-}
-.about__list li::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  color: var(--cyan);
-}
-
-.about__facts {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .fact-card__label {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -858,8 +841,33 @@ main,
   color: var(--text-muted);
 }
 
+.education-card {
+  max-width: 560px;
+}
+.education-card__achievements {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.education-card__achievements li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding-left: 22px;
+  position: relative;
+}
+.education-card__achievements li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-weight: 700;
+}
+
 /* ---------------------------------------------------------------
-   11. SERVICES
+   11. SPECIALIZATIONS (SERVICES)
 --------------------------------------------------------------- */
 .services__grid {
   display: grid;
@@ -907,40 +915,6 @@ main,
   margin-bottom: 18px;
 }
 .skill-group__title--spaced { margin-top: 28px; }
-
-.skill-bars {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.skill-bars__head {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  margin-bottom: 6px;
-}
-.skill-bars__head span:last-child {
-  font-family: var(--font-mono);
-  color: var(--text-muted);
-  font-size: 0.75rem;
-}
-
-.skill-bars__track {
-  width: 100%;
-  height: 6px;
-  border-radius: 100px;
-  background: rgba(255,255,255,0.06);
-  overflow: hidden;
-}
-
-.skill-bars__fill {
-  height: 100%;
-  width: 0%;
-  border-radius: 100px;
-  background: var(--gradient);
-  transition: width 1.2s var(--ease);
-}
 
 .skill-group--tools {
   grid-column: span 1;
@@ -1030,65 +1004,7 @@ main,
 }
 
 /* ---------------------------------------------------------------
-   14. CAREER JOURNEY (TIMELINE)
---------------------------------------------------------------- */
-.timeline {
-  position: relative;
-  padding-left: 32px;
-  border-left: 1px solid var(--border);
-}
-
-.timeline__item {
-  position: relative;
-  padding-bottom: 40px;
-}
-.timeline__item:last-child { padding-bottom: 0; }
-
-.timeline__item::before {
-  content: '';
-  position: absolute;
-  left: -37.5px;
-  top: 4px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--gradient);
-  box-shadow: 0 0 0 4px var(--bg), 0 0 16px var(--cyan);
-}
-
-.timeline__item--present::before {
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.timeline__year {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--cyan);
-  display: block;
-  margin-bottom: 10px;
-}
-
-.timeline__content ul {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.timeline__content li {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-  padding-left: 18px;
-  position: relative;
-}
-.timeline__content li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--text-muted);
-}
-
-/* ---------------------------------------------------------------
-   15. PROJECTS
+   14. PROJECTS
 --------------------------------------------------------------- */
 .projects__grid {
   display: grid;
@@ -1192,81 +1108,168 @@ main,
   font-family: var(--font-display);
 }
 
-/* ---------------------------------------------------------------
-   16. ACHIEVEMENTS / LEARNING / TESTIMONIALS
---------------------------------------------------------------- */
-.achievements__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-bottom: 100px;
-}
-
-.achievement-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-.achievement-card__icon {
-  font-size: 1.5rem;
-}
-
-.learning { margin-bottom: 100px; }
-
-.learning__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.learning-card__head {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  margin-bottom: 10px;
-}
-.learning-card__head span:last-child {
+.project-card__pending-badge {
   font-family: var(--font-mono);
-  color: var(--cyan);
-  font-size: 0.75rem;
-}
-
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.testimonial-card {
-  text-align: center;
-  padding: 36px 24px;
-}
-.testimonial-card__quote {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: var(--border-strong);
-  display: block;
-  line-height: 1;
-}
-.testimonial-card__badge {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--text-muted);
+  font-size: 0.68rem;
+  color: var(--sky);
   border: 1px dashed var(--border-strong);
   border-radius: 100px;
-  padding: 6px 14px;
-  display: inline-block;
-  margin: 12px 0;
+  padding: 5px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
-.testimonial-card__role {
+
+/* Native <details>/<summary> accordion for per-project technical depth */
+.project-details {
+  margin-bottom: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.project-details summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  list-style: none;
+}
+.project-details summary::-webkit-details-marker { display: none; }
+.project-details summary:hover { color: var(--text-primary); }
+.project-details .chevron {
+  transition: transform var(--dur-fast) var(--ease);
+}
+.project-details[open] summary .chevron {
+  transform: rotate(180deg);
+}
+.project-details__body {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.project-details__body h4 {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cyan);
+}
+.project-details__body p {
   font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.project-details__body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.project-details__body ul li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding-left: 16px;
+  position: relative;
+}
+.project-details__body ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* MOS flagship spotlight */
+.project-spotlight {
+  position: relative;
+  margin-bottom: 24px;
+  border-color: var(--border-strong);
+  background: linear-gradient(160deg, rgba(37, 99, 235, 0.1), rgba(56, 189, 248, 0.04));
+}
+
+.project-spotlight__badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: var(--gradient);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.project-spotlight__title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-spotlight__desc {
+  color: var(--text-secondary);
+  max-width: 65ch;
+  margin-bottom: 28px;
+}
+
+.project-spotlight__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.feature-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.feature-chip span:first-child {
+  font-size: 1.1rem;
+}
+.feature-chip--future {
+  border-style: dashed;
+  color: var(--text-secondary);
+}
+
+.project-spotlight__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.project-spotlight__meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.project-spotlight__meta h4 {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+.project-spotlight__meta p {
+  font-size: 0.88rem;
   color: var(--text-secondary);
 }
 
 /* ---------------------------------------------------------------
-   17. CONTACT
+   15. CONTACT
 --------------------------------------------------------------- */
 .contact__grid {
   display: grid;
@@ -1363,7 +1366,7 @@ main,
 }
 
 /* ---------------------------------------------------------------
-   18. FOOTER / BACK-TO-TOP
+   16. FOOTER / BACK-TO-TOP
 --------------------------------------------------------------- */
 .footer {
   max-width: var(--content-max);
@@ -1419,7 +1422,7 @@ main,
 }
 
 /* ---------------------------------------------------------------
-   19. SCROLL REVEAL ANIMATIONS
+   17. SCROLL REVEAL ANIMATIONS
 --------------------------------------------------------------- */
 .reveal {
   opacity: 0;
@@ -1432,7 +1435,7 @@ main,
 }
 
 /* ---------------------------------------------------------------
-   20. RESPONSIVE BREAKPOINTS
+   18. RESPONSIVE BREAKPOINTS
 --------------------------------------------------------------- */
 @media (max-width: 1100px) {
   .mobile-bar { display: flex; }
@@ -1469,17 +1472,20 @@ main,
   .terminal-card { display: none; }
   .floating-chip--1, .floating-chip--2, .floating-chip--3 { display: none; }
 
-  .about__grid,
   .contact__grid {
     grid-template-columns: 1fr;
   }
 
   .services__grid,
-  .skills__grid,
-  .achievements__grid,
-  .learning__grid,
-  .testimonials__grid {
+  .skills__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-spotlight__features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-spotlight__meta {
+    grid-template-columns: 1fr;
   }
 
   .projects__grid {
@@ -1492,17 +1498,17 @@ main,
   .hero__stats { grid-template-columns: repeat(2, 1fr); row-gap: 24px; }
   .experience-card__list { grid-template-columns: 1fr; }
   .services__grid,
-  .skills__grid,
-  .achievements__grid,
-  .learning__grid,
-  .testimonials__grid {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+  .project-spotlight__features {
     grid-template-columns: 1fr;
   }
   .experience-card__head { flex-direction: column; }
 }
 
 /* ---------------------------------------------------------------
-   21. ACCESSIBILITY & REDUCED MOTION
+   19. ACCESSIBILITY & REDUCED MOTION
 --------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
