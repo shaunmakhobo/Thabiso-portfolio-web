@@ -1,129 +1,254 @@
-# Thabiso Makhobo — Portfolio
+# Thabiso Shaun Charles Makhobo - Portfolio
 
-Personal portfolio site for **Thabiso Shaun Charles Makhobo**, Software Developer
-specialising in Backend and Mobile Development. Built as a static, dependency-free
-site — no build step, no framework, no npm install required.
+Welcome to my personal portfolio website.
 
-**Live structure:** Hero → Featured Projects → Experience → Specializations →
-Skills → Education → Contact. Projects are shown first because the site is meant
-to demonstrate what's been built, not lead with a bio.
+I built this portfolio to showcase the software solutions I've worked on throughout my Software Development journey. Rather than focusing only on the technologies I know, I wanted this portfolio to communicate one thing immediately:
 
-## Tech stack
+> I build software solutions that solve real-world problems.
 
-- **HTML5** — one file, semantic markup, JSON-LD `Person` schema for SEO
-- **CSS3** — hand-written, no framework, organised as a token-based design system
-- **Vanilla JavaScript** — small, single-purpose modules, no dependencies
-- **Fonts** — Bricolage Grotesque (display), Plus Jakarta Sans (body), JetBrains
-  Mono (code/label accents), loaded from Google Fonts
+I specialize in Backend and Mobile Development and I'm passionate about building practical systems that improve productivity, simplify processes, and provide value to their users.
 
-No build tools, bundlers, or package.json — open `index.html` in a browser and
-it works.
+This portfolio serves as both my professional profile and a showcase of my projects, experience, technical skills, and future growth as a Software Developer.
 
-## Project structure
+
+---
+
+## Why I Built This Portfolio
+
+I intentionally designed this portfolio to showcase my projects before anything else.
+
+Many graduate portfolios begin by listing skills and technologies, but I wanted recruiters, clients, and other developers to immediately see what I've built.
+
+My goal isn't to simply say:
+
+> "I know C#, Kotlin or SQL."
+
+My goal is to show:
+
+> "This is what I've built using them."
+
+Every project in this portfolio represents a problem that I wanted to solve or a skill that I wanted to develop further.
+
+
+---
+
+## Portfolio Structure
+
+The portfolio follows the structure below:
+
+```
+Home
+↓
+
+Featured Projects
+↓
+
+Professional Experience
+↓
+
+Specializations
+↓
+
+Technical Skills
+↓
+
+Education
+↓
+
+Contact
+```
+
+Projects are intentionally displayed first because I believe software developers should be recognized by the solutions they build.
+
+
+---
+
+## Technologies Used
+
+This portfolio was built using:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Git & GitHub Pages
+
+No frameworks, libraries or build tools were used.
+
+I wanted to challenge myself to build a modern and responsive portfolio using only the fundamentals of web development.
+
+
+---
+
+## Featured Projects
+
+Some of the projects currently showcased include:
+
+- MOS (My flagship productivity and life management system)
+- SmartSpend
+- Healthify
+- Lecturer Claims System
+- Portfolio Website
+- Future software projects and business systems
+
+More projects will continue to be added as I grow professionally.
+
+
+---
+
+## Design Decisions
+
+Some of the decisions I made while building this portfolio include:
+
+- Prioritising projects before skills.
+- Using a modern dark themed design.
+- Keeping the website lightweight and dependency free.
+- Building everything using semantic HTML, CSS and Vanilla JavaScript.
+- Designing the website to be fully responsive across desktop and mobile devices.
+- Making the portfolio easy to maintain and expand in the future.
+
+
+---
+
+## Technical Overview
 
 ```
 My Portfolio/
-├── index.html                  All markup, one page, anchor-linked sections
-├── Thabiso Shaun Charles Makhobo.pdf   CV, served for download
-├── assets/
-│   ├── css/
-│   │   └── style.css           All styles — see table of contents at the top
-│   ├── js/
-│   │   └── main.js             All behaviour — one function per feature
-│   └── images/                 Profile photo + project cover screenshots
+│
+├── index.html
+├── Thabiso Shaun Charles Makhobo.pdf
+│
+├── assets
+│     │
+│     ├── css
+│     │      style.css
+│     │
+│     ├── js
+│     │      main.js
+│     │
+│     └── images
+│            Project Images
+│            Profile Image
+│
 └── README.md
+
 ```
 
-## How the page is put together
+### HTML
 
-The layout is a **fixed left sidebar** (profile, nav, availability card, CV
-download, socials) plus a **scrolling main column** offset to its right
-(`main { margin-left: var(--sidebar-width) }` in `style.css`). Below the
-`1100px` breakpoint the sidebar becomes an off-canvas drawer triggered by a
-hamburger button in a mobile top bar.
+Responsible for:
 
-Each `<section>` in `index.html` maps to one sidebar nav item via its `id`
-(`#home`, `#projects`, `#experience`, `#specializations`, `#skills`,
-`#education`, `#contact`). Add or remove a `<section id="...">` and a matching
-`<li><a href="#...">` in the sidebar nav to change the page structure.
+- Page structure
+- Semantic markup
+- SEO information
+- Portfolio sections
 
-### Project cards
 
-Each card in `#projects` follows the same shape: a cover image
-(`.project-card__media`), a description, tech chips, and a native
-`<details>/<summary>` accordion ("Project Details") holding Features
-Implemented / Architecture / Challenges / Future Enhancements — no JS needed
-for the accordion, it's just HTML. MOS is pulled out as a full-width
-`.project-spotlight` card above the grid since it's the flagship project.
-Projects without a public repo or live link use a disabled
-`.btn--disabled` span instead of an `<a>`.
+### CSS
 
-To add a project: copy an existing `<article class="glass-card project-card">`
-block, drop a screenshot in `assets/images/`, and reference it in the `<img>`
-`src`. To add a cover image to a project that doesn't have one yet, look for
-`.project-card--empty` — that's the "coming soon" placeholder style.
+Responsible for:
 
-## JavaScript modules (`assets/js/main.js`)
+- Styling
+- Responsive layouts
+- Animations
+- Design tokens
+- Accessibility improvements
 
-Each feature is one function, called once from the `DOMContentLoaded`
-listener at the bottom of the file:
 
-| Function | What it does |
-|---|---|
-| `initMobileNav()` | Opens/closes the sidebar drawer on mobile, closes on link click or `Esc` |
-| `initScrollSpy()` | Highlights the active sidebar nav link via `IntersectionObserver` as you scroll |
-| `initScrollReveal()` | Fades/slides `.reveal` elements in once they enter the viewport |
-| `initCounters()` | Animates the hero stat numbers (`data-target` / `data-suffix`) when scrolled into view |
-| `initTypewriter()` | Types out the `developer.json` snippet in the hero terminal card |
-| `initParticles()` | Draws the drifting dot canvas behind the hero |
-| `initContactForm()` | Validates the contact form and opens the visitor's email client via a `mailto:` link (there's no backend) |
-| `initBackToTop()` | Shows/hides the back-to-top button based on scroll position |
-| `initFooterYear()` | Writes the current year into the footer |
+### JavaScript
 
-All animation respects `prefers-reduced-motion` — motion is skipped or
-shortened automatically for visitors who've asked for it at the OS level.
+Responsible for:
 
-## CSS (`assets/css/style.css`)
+- Mobile navigation
+- Scroll animations
+- Typewriter effects
+- Animated statistics
+- Contact form functionality
+- Back to top button
+- Active section highlighting
 
-Organised top-to-bottom exactly like the page reads (Hero → Fact Card →
-Specializations → Skills → Experience → Projects → Contact → Footer →
-Animations → Responsive → Accessibility), with a numbered table of contents
-in the file header. Design tokens (colours, fonts, spacing, radii, motion
-timing) are CSS custom properties in `:root` at the top — change the palette
-or type scale there rather than hunting through individual rules.
 
-The accent colour is a blue/cyan gradient (`--blue` → `--cyan`), the
-background is near-black (`--bg: #09090f`), and text uses a three-step
-grey scale (`--text-primary/secondary/muted`).
+---
 
-## Running locally
+## Running the Portfolio Locally
 
-No install step. Either:
+Simply open:
 
-- Open `index.html` directly in a browser, or
-- Serve it (recommended, avoids relative-path quirks):
-  ```bash
-  python -m http.server 8000
-  # then visit http://localhost:8000/index.html
-  ```
+```
+index.html
+```
+
+or use:
+
+```bash
+python -m http.server 8000
+```
+
+and visit:
+
+```
+http://localhost:8000
+```
+
+
+---
 
 ## Deployment
 
-Hosted on **GitHub Pages**. Two things that matter if you redeploy or fork this:
+This portfolio is hosted using GitHub Pages.
 
-1. The entry file must be named exactly `index.html` (lowercase) — GitHub
-   Pages' server is case-sensitive, and a capitalised `Index.html` will 404
-   on the root URL.
-2. Push to the `main` branch; Pages serves straight from the repo root, no
-   build step runs.
+No build tools or additional configuration are required.
 
-## Updating content
+The only requirements are:
 
-- **CV**: replace `Thabiso Shaun Charles Makhobo.pdf` — the sidebar and
-  contact section both link to it by that exact filename.
-- **Profile photo**: `assets/images/profileimg.png`, used in both the sidebar
-  avatar and the hero portrait (background-removed PNG so it blends into the
-  page rather than sitting in a frame).
-- **Contact details**: email, phone, WhatsApp, and social links are plain
-  `<a>` tags in the `#contact` section and the sidebar — update the `href`s
-  directly.
+- index.html must remain lowercase.
+- The repository should be pushed to the main branch.
+- All assets should maintain their relative file paths.
+
+
+---
+
+## Future Improvements
+
+Some future improvements I would like to implement include:
+
+- Additional project showcases.
+- Interactive project demonstrations.
+- Improved project analytics.
+- Blog articles documenting my development journey.
+- Additional animations and accessibility improvements.
+- Expanded freelance and software services sections.
+
+
+---
+
+## About Me
+
+I graduated with a Diploma in Information Technology (Software Development) from IIE Rosebank College with Distinctions and have a growing portfolio of software projects across Backend, Mobile, Desktop, and Web Development.
+
+I'm particularly passionate about:
+
+- Backend Development
+- Mobile Development
+- Software Architecture
+- Building practical software solutions
+- Continuous learning and professional growth
+
+My long-term goal is not only to become a better developer but to build software solutions that solve meaningful problems.
+
+
+---
+
+## Contact
+
+- Email: shaunmakhobo@gmail.com
+- LinkedIn: www.linkedin.com/in/thabiso-makhobo-667527289
+- GitHub: github.com/shaunmakhobo
+
+
+Thank you for taking the time to visit my portfolio.
+
+Whether you're a recruiter, fellow developer, or potential client, I hope my work gives you a good understanding of both my technical abilities and the kind of developer I'm continuously striving to become.
+
+> "Build solutions. Keep learning. Stay consistent."
+
+— Thabiso Shaun Charles Makhobo
