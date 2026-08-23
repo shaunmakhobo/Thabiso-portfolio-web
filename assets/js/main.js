@@ -1,5 +1,5 @@
 /* =================================================================
-   THABISO MAKHOBO — DEVELOPER PORTFOLIO
+   THABISO MAKHOBO - DEVELOPER PORTFOLIO
    Modular vanilla JS: each feature is self-contained and initialised
    from the bottom of the file once the DOM is ready.
 ================================================================= */
@@ -192,7 +192,7 @@ function initParticles() {
 
   let width, height, particles;
 
-  const palette = ['rgba(37,99,235,0.6)', 'rgba(56,189,248,0.6)', 'rgba(125,211,252,0.5)'];
+  const palette = ['rgba(242,96,12,0.55)', 'rgba(255,138,76,0.5)', 'rgba(138,58,8,0.4)'];
 
   function resize() {
     width = canvas.width = container.offsetWidth;
@@ -264,7 +264,7 @@ function initContactForm() {
     }
 
     const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    const body = encodeURIComponent(`${message}\n\n- ${name} (${email})`);
     window.location.href = `mailto:shaunmakhobo@gmail.com?subject=${subject}&body=${body}`;
 
     status.style.color = '#8ef0b5';

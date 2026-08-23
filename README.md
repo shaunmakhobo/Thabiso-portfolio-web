@@ -251,4 +251,4 @@ Whether you're a recruiter, fellow developer, or potential client, I hope my wor
 
 > "Build solutions. Keep learning. Stay consistent."
 
-— Thabiso Shaun Charles Makhobo
+- Thabiso Shaun Charles Makhobo

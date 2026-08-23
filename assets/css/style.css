@@ -1,5 +1,5 @@
 /* =================================================================
-   THABISO MAKHOBO — DEVELOPER PORTFOLIO
+   THABISO MAKHOBO - DEVELOPER PORTFOLIO
    Table of Contents:
    1.  Custom Properties (Design Tokens)
    2.  Reset & Base
@@ -26,26 +26,26 @@
    1. CUSTOM PROPERTIES
 --------------------------------------------------------------- */
 :root {
-  /* Surfaces */
-  --bg: #09090f;
-  --bg-elevated: #0e0e17;
-  --surface: rgba(255, 255, 255, 0.035);
-  --surface-hover: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.16);
+  /* Surfaces: plain black */
+  --bg: #0b0b0c;
+  --bg-elevated: #18181b;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
 
-  /* Brand gradient */
-  --blue: #2563eb;
-  --blue-dim: #1e3a8a;
-  --cyan: #38bdf8;
-  --sky: #7dd3fc;
-  --gradient: linear-gradient(135deg, var(--blue), var(--cyan));
-  --gradient-soft: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(56, 189, 248, 0.15));
+  /* Accent: flat orange, no gradients */
+  --blue: #f2600c;
+  --blue-dim: #8a3a08;
+  --cyan: #ff8a4c;
+  --sky: #ffd9be;
+  --gradient: var(--blue);
+  --gradient-soft: rgba(242, 96, 12, 0.2);
 
-  /* Text */
-  --text-primary: #f5f5f7;
-  --text-secondary: #a1a1ab;
-  --text-muted: #6c6c78;
+  /* Text: plain white and grey */
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --text-muted: #6b6b6b;
 
   /* Type */
   --font-display: 'Bricolage Grotesque', 'Georgia', serif;
@@ -192,40 +192,10 @@ h1, h2, h3, h4 {
   pointer-events: none;
 }
 
-.glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.35;
-}
-
-.glow--one {
-  width: 620px;
-  height: 620px;
-  top: -200px;
-  left: 20%;
-  background: radial-gradient(circle, var(--blue), transparent 70%);
-  animation: drift 22s ease-in-out infinite alternate;
-}
-
-.glow--two {
-  width: 560px;
-  height: 560px;
-  bottom: -220px;
-  right: -100px;
-  background: radial-gradient(circle, var(--cyan), transparent 70%);
-  animation: drift 26s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes drift {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(60px, 40px) scale(1.15); }
-}
-
 .grain {
   position: absolute;
   inset: 0;
-  opacity: 0.035;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -248,11 +218,11 @@ h1, h2, h3, h4 {
 .btn--gradient {
   background: var(--gradient);
   color: #fff;
-  box-shadow: 0 8px 24px -8px rgba(37, 99, 235, 0.55);
+  box-shadow: 0 8px 24px -8px rgba(242, 96, 12, 0.5);
 }
 .btn--gradient:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px -8px rgba(56, 189, 248, 0.6);
+  box-shadow: 0 12px 32px -8px rgba(255, 122, 44, 0.55);
 }
 
 .btn--outline {
@@ -574,10 +544,31 @@ main,
 }
 
 .hero__grid {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+}
+
+/* Flat, fully-opaque colour blocks behind the hero content, no blur */
+.hero__block {
+  position: absolute;
+  display: block;
+  background: var(--blue);
+  pointer-events: none;
+}
+.hero__block--1 {
+  width: 220px;
+  height: 300px;
+  top: -60px;
+  right: 14%;
+}
+.hero__block--2 {
+  width: 160px;
+  height: 220px;
+  bottom: 6%;
+  right: 0;
 }
 
 .eyebrow {
@@ -688,17 +679,20 @@ main,
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 420px;
+  min-height: 540px;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .portrait-frame {
   position: relative;
   z-index: 0;
-  width: 300px;
-  height: 400px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  width: min(380px, 100%);
+  height: 540px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
 }
 
 .portrait-frame__img {
@@ -706,19 +700,48 @@ main,
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: bottom center;
-  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.55));
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(75%) contrast(1.15) brightness(0.65);
 }
 
-/* Soft radial glow behind the cutout, standing in for a hard card background */
+/* Fades the photo into the card's bottom edge, no colour tint (keeps the photo clean, not muddy) */
+.portrait-frame__duotone {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 55%, var(--bg) 98%);
+}
+
+/* Thin decorative line art, echoing a studio-photo overlay */
+.portrait-frame__lines {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.portrait-frame__lines polyline {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.5;
+  opacity: 0.85;
+}
+.portrait-frame__lines circle {
+  fill: var(--blue);
+  opacity: 0.9;
+}
+
+/* Soft radial glow behind the frame */
 .portrait-frame__grid {
   position: absolute;
   inset: -12%;
   z-index: 0;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.32), rgba(37, 99, 235, 0.16) 45%, transparent 72%);
+  background: radial-gradient(circle, rgba(242, 96, 12, 0.22), rgba(138, 58, 8, 0.1) 45%, transparent 72%);
   filter: blur(10px);
   animation: pulse 5s ease-in-out infinite;
 }
@@ -735,9 +758,9 @@ main,
   box-shadow: 0 12px 24px -8px rgba(0,0,0,0.5);
   animation: floaty 5s ease-in-out infinite;
 }
-.floating-chip--1 { top: 8%; left: -6%; color: #93c5fd; animation-delay: 0s; }
-.floating-chip--2 { top: 46%; right: -10%; color: #67e8f9; animation-delay: 1.2s; }
-.floating-chip--3 { bottom: 12%; left: -10%; color: #7dd3fc; animation-delay: 2.4s; }
+.floating-chip--1 { top: 8%; left: -4%; color: #ff8a4c; animation-delay: 0s; }
+.floating-chip--2 { top: 46%; right: -5%; color: #ffab7a; animation-delay: 1.2s; }
+.floating-chip--3 { bottom: 12%; left: -5%; color: #ffd9be; animation-delay: 2.4s; }
 
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
@@ -746,8 +769,8 @@ main,
 
 .terminal-card {
   position: absolute;
-  bottom: -50px;
-  right: -30px;
+  bottom: -40px;
+  right: -14px;
   width: 260px;
   background: var(--bg-elevated);
   border: 1px solid var(--border-strong);
@@ -783,7 +806,7 @@ main,
   font-family: var(--font-mono);
   font-size: 0.72rem;
   line-height: 1.7;
-  color: #93c5fd;
+  color: #ff8a4c;
   white-space: pre-wrap;
   min-height: 130px;
 }
@@ -1087,8 +1110,8 @@ main,
   font-size: 0.72rem;
   padding: 5px 11px;
   border-radius: 100px;
-  background: rgba(37, 99, 235, 0.14);
-  color: #93c5fd;
+  background: rgba(242, 96, 12, 0.16);
+  color: #ff8a4c;
 }
 
 .project-card__actions {
@@ -1191,7 +1214,7 @@ main,
   position: relative;
   margin-bottom: 24px;
   border-color: var(--border-strong);
-  background: linear-gradient(160deg, rgba(37, 99, 235, 0.1), rgba(56, 189, 248, 0.04));
+  background: rgba(242, 96, 12, 0.06);
 }
 
 .project-spotlight__badge {
@@ -1478,6 +1501,7 @@ main,
   }
   .terminal-card { display: none; }
   .floating-chip--1, .floating-chip--2, .floating-chip--3 { display: none; }
+  .hero__block { display: none; }
 
   .contact__grid {
     grid-template-columns: 1fr;
