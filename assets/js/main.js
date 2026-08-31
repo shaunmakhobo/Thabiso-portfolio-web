@@ -156,8 +156,8 @@ function initTypewriter() {
 
   const snippet = `const developer = {
   name: "Thabiso Makhobo",
-  role: "Backend & Mobile Developer",
-  stack: ["C#", "Kotlin", "SQL"],
+  role: "Backend & Web Developer",
+  stack: ["C#", "React", "SQL"],
   status: "available"
 };`;
 
