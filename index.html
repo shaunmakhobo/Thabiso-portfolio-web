@@ -159,6 +159,31 @@
       <span class="hero__block hero__block--1" aria-hidden="true"></span>
       <span class="hero__block hero__block--2" aria-hidden="true"></span>
 
+      <div class="hero__visual reveal">
+        <div class="portrait-frame">
+          <div class="portrait-frame__grid" aria-hidden="true"></div>
+          <img src="assets/images/mainpageimg.png" alt="Thabiso Shaun Charles Makhobo" class="portrait-frame__img" />
+          <div class="portrait-frame__duotone" aria-hidden="true"></div>
+          <svg class="portrait-frame__lines" viewBox="0 0 300 400" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="14,54 150,16 216,132" />
+            <polyline points="176,388 262,304 288,168" />
+            <circle cx="258" cy="54" r="2.5" />
+            <circle cx="24" cy="360" r="2.5" />
+          </svg>
+        </div>
+        <div class="floating-chip floating-chip--1">C#</div>
+        <div class="floating-chip floating-chip--2">Kotlin</div>
+        <div class="floating-chip floating-chip--3">SQL</div>
+
+        <div class="terminal-card">
+          <div class="terminal-card__bar">
+            <span></span><span></span><span></span>
+            <p>developer.json</p>
+          </div>
+          <pre class="terminal-card__body"><code id="typewriter"></code><span class="cursor-blink">|</span></pre>
+        </div>
+      </div>
+
       <div class="hero__grid">
         <div class="hero__copy">
           <p class="eyebrow reveal"><span class="eyebrow__bracket">&lt;</span>Software Developer<span class="eyebrow__bracket">/&gt;</span></p>
@@ -207,7 +232,7 @@
 
           <dl class="hero__stats reveal">
             <div class="stat">
-              <dt class="stat__value"><span class="counter" data-target="8" data-suffix="+">0</span></dt>
+              <dt class="stat__value"><span class="counter" data-target="9" data-suffix="+">0</span></dt>
               <dd class="stat__label">Software Solutions Shipped</dd>
             </div>
             <div class="stat">
@@ -223,31 +248,6 @@
               <dd class="stat__label">Delivery Focus</dd>
             </div>
           </dl>
-        </div>
-
-        <div class="hero__visual reveal">
-          <div class="portrait-frame">
-            <div class="portrait-frame__grid" aria-hidden="true"></div>
-            <img src="assets/images/mainpageimg.png" alt="Thabiso Shaun Charles Makhobo" class="portrait-frame__img" />
-            <div class="portrait-frame__duotone" aria-hidden="true"></div>
-            <svg class="portrait-frame__lines" viewBox="0 0 300 400" aria-hidden="true">
-              <polyline points="14,54 150,16 216,132" />
-              <polyline points="176,388 262,304 288,168" />
-              <circle cx="258" cy="54" r="2.5" />
-              <circle cx="24" cy="360" r="2.5" />
-            </svg>
-          </div>
-          <div class="floating-chip floating-chip--1">C#</div>
-          <div class="floating-chip floating-chip--2">Kotlin</div>
-          <div class="floating-chip floating-chip--3">SQL</div>
-
-          <div class="terminal-card">
-            <div class="terminal-card__bar">
-              <span></span><span></span><span></span>
-              <p>developer.json</p>
-            </div>
-            <pre class="terminal-card__body"><code id="typewriter"></code><span class="cursor-blink">|</span></pre>
-          </div>
         </div>
       </div>
 
@@ -309,6 +309,46 @@
 
       <!-- Project grid -->
       <div class="projects__grid">
+
+        <!-- DSH Accessories -->
+        <article class="glass-card project-card reveal">
+          <div class="project-card__media" data-code="00">
+            <img src="assets/images/dshaccessories.co.za.png" alt="DSH Accessories homepage" loading="lazy" />
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">DSH Accessories</h3>
+            <p class="project-card__desc">A full e-commerce platform and admin system for a Pretoria-based car styling and accessories retailer, built for a paying client and live in production.</p>
+            <div class="project-card__tech">
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">Supabase</span>
+              <span class="tech-chip">Tailwind CSS</span>
+            </div>
+            <details class="project-details">
+              <summary>Project Details <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="project-details__body">
+                <h4>Features Implemented</h4>
+                <ul>
+                  <li>Product catalogue with search, filtering, and a Vehicle Finder (parts by make and model)</li>
+                  <li>Cart, checkout, and online payments via Yoco</li>
+                  <li>Customer accounts with order history</li>
+                  <li>Admin dashboard for products, inventory, orders, sales reports, customers, and vehicles</li>
+                  <li>Self-service content management for the homepage, gallery, and reviews</li>
+                </ul>
+                <h4>Architecture</h4>
+                <p>A React 19 + TypeScript single-page app (Vite, Tailwind CSS v4) with a public storefront and a separate admin dashboard, backed by Supabase for the database, authentication, storage, and row-level security. Data fetching runs through TanStack Query, forms are validated with React Hook Form and Zod, and the site is deployed on Vercel.</p>
+                <h4>Challenges</h4>
+                <p>Building an admin dashboard non-technical staff can use to manage products, orders, and homepage content directly, while keeping the Vehicle Finder fast and accurate as the catalogue grows, and integrating Yoco payments securely end-to-end.</p>
+                <h4>Future Enhancements</h4>
+                <p>Switching from Yoco test payments to live payments, and automated order-confirmation emails.</p>
+              </div>
+            </details>
+            <div class="project-card__actions">
+              <span class="btn btn--disabled btn--sm" aria-disabled="true">GitHub (Private)</span>
+              <a href="https://dshaccessories.co.za/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
 
         <!-- SmartSpend -->
         <article class="glass-card project-card reveal">

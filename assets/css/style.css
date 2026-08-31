@@ -545,10 +545,8 @@ main,
 
 .hero__grid {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  z-index: 1;
+  max-width: 480px;
 }
 
 /* Flat, fully-opaque colour blocks behind the hero content, no blur */
@@ -673,26 +671,23 @@ main,
   letter-spacing: 0.04em;
 }
 
-/* Hero visual: portrait frame + floating chips + terminal card */
+/* Hero visual: full-bleed photo panel covering the right half of the section,
+   with the text column (.hero__grid) overlapping its left edge on top. */
 .hero__visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 540px;
-  max-width: 420px;
-  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  z-index: 0;
 }
 
 .portrait-frame {
   position: relative;
-  z-index: 0;
-  width: min(380px, 100%);
-  height: 540px;
-  border-radius: var(--radius-lg);
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--border-strong);
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
 }
 
 .portrait-frame__img {
@@ -700,18 +695,20 @@ main,
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  filter: grayscale(75%) contrast(1.15) brightness(0.65);
+  object-fit: contain;
+  object-position: bottom center;
+  /* Original photo colour, no grading. contain (not cover) avoids
+     upscaling/cropping the source past its native resolution. */
 }
 
-/* Fades the photo into the card's bottom edge, no colour tint (keeps the photo clean, not muddy) */
+/* Scrim on the photo's left edge only, so the overlapping hero text stays readable
+   while the rest of the photo keeps its true, unfiltered colour. */
 .portrait-frame__duotone {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: linear-gradient(180deg, transparent 55%, var(--bg) 98%);
+  background: linear-gradient(90deg, rgba(11, 11, 12, 0.4) 0%, transparent 16%);
 }
 
 /* Thin decorative line art, echoing a studio-photo overlay */
@@ -734,16 +731,8 @@ main,
   opacity: 0.9;
 }
 
-/* Soft radial glow behind the frame */
 .portrait-frame__grid {
-  position: absolute;
-  inset: -12%;
-  z-index: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(242, 96, 12, 0.22), rgba(138, 58, 8, 0.1) 45%, transparent 72%);
-  filter: blur(10px);
-  animation: pulse 5s ease-in-out infinite;
+  display: none;
 }
 
 .floating-chip {
@@ -758,9 +747,9 @@ main,
   box-shadow: 0 12px 24px -8px rgba(0,0,0,0.5);
   animation: floaty 5s ease-in-out infinite;
 }
-.floating-chip--1 { top: 8%; left: -4%; color: #ff8a4c; animation-delay: 0s; }
-.floating-chip--2 { top: 46%; right: -5%; color: #ffab7a; animation-delay: 1.2s; }
-.floating-chip--3 { bottom: 12%; left: -5%; color: #ffd9be; animation-delay: 2.4s; }
+.floating-chip--1 { top: 10%; left: 6%; color: #ff8a4c; animation-delay: 0s; }
+.floating-chip--2 { top: 48%; left: 5%; color: #ffab7a; animation-delay: 1.2s; }
+.floating-chip--3 { bottom: 24%; left: 7%; color: #ffd9be; animation-delay: 2.4s; }
 
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
@@ -769,9 +758,9 @@ main,
 
 .terminal-card {
   position: absolute;
-  bottom: -40px;
-  right: -14px;
-  width: 260px;
+  bottom: 8%;
+  left: 6%;
+  width: 240px;
   background: var(--bg-elevated);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
@@ -1492,12 +1481,17 @@ main,
   }
 
   .hero__grid {
-    grid-template-columns: 1fr;
+    max-width: 100%;
   }
   .hero__visual {
+    position: static;
     order: -1;
-    min-height: 320px;
+    width: 100%;
+    height: 340px;
     margin-bottom: 20px;
+  }
+  .portrait-frame {
+    border-radius: var(--radius-lg);
   }
   .terminal-card { display: none; }
   .floating-chip--1, .floating-chip--2, .floating-chip--3 { display: none; }
