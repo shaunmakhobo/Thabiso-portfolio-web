@@ -24,7 +24,7 @@
   <meta name="twitter:description" content="Software Developer specialising in Backend and Mobile Development. I build practical software solutions that solve real-world problems." />
 
   <!-- Favicon: inline gradient monogram, no external asset required -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f2600c'/%3E%3Cstop offset='1' stop-color='%23ff8a4c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230b0b0c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='url(%23g)' text-anchor='middle'%3ETM%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23a6e000'/%3E%3Cstop offset='1' stop-color='%23c6f24d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230b0b0c'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='url(%23g)' text-anchor='middle'%3ETM%3C/text%3E%3C/svg%3E" />
 
   <!-- ============ FONTS ============ -->
   <!-- Bricolage Grotesque: distinctive display face for headings -->
@@ -83,15 +83,12 @@
     </button>
   </header>
 
-  <!-- =========================================================
-       FIXED LEFT SIDEBAR
-  ========================================================== -->
   <aside class="sidebar" id="sidebar" data-state="closed">
 
     <!-- Profile -->
     <div class="sidebar__profile">
       <div class="avatar">
-        <img src="assets/images/Profileimg.jpeg" alt="Thabiso Makhobo" class="avatar__img" width="92" height="92" />
+        <img src="assets/images/profileimg.jpeg" alt="Thabiso Makhobo" class="avatar__img" width="92" height="92" />
         <span class="avatar__ring" aria-hidden="true"></span>
       </div>
       <h1 class="sidebar__name">Thabiso Makhobo</h1>
@@ -228,7 +225,7 @@
         <div class="hero__visual reveal">
           <div class="portrait-frame">
             <div class="portrait-frame__grid" aria-hidden="true"></div>
-            <img src="assets/images/mainpageimg.png" alt="Thabiso Shaun Charles Makhobo" class="portrait-frame__img" />
+            <img src="assets/images/mainimg.jpeg" alt="Thabiso Shaun Charles Makhobo" class="portrait-frame__img" />
             <div class="portrait-frame__duotone" aria-hidden="true"></div>
             <svg class="portrait-frame__lines" viewBox="0 0 300 400" aria-hidden="true">
               <polyline points="14,54 150,16 216,132" />
@@ -302,18 +299,53 @@
         </div>
 
         <div class="project-card__actions">
-<<<<<<< HEAD
-          <a href="https://github.com/shaunmakhobo/MOS" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">GitHub</a>
-          <span class="btn btn--disabled btn--sm" aria-disabled="true">Live Demo (Private)</span>
-=======
           <span class="btn btn--disabled btn--sm" aria-disabled="true">GitHub - private</span>
-          <span class="btn btn--disabled btn--sm" aria-disabled="true">Live Demo — Private</span>
->>>>>>> d46bd8234632e0139a61552237b00ac5a264f96f
+          <span class="btn btn--disabled btn--sm" aria-disabled="true">Live Demo (Private)</span>
         </div>
       </article>
 
       <!-- Project grid -->
       <div class="projects__grid">
+
+        <!-- DSH Accessories -->
+        <article class="glass-card project-card reveal">
+          <div class="project-card__media" data-code="00">
+            <img src="assets/images/dshaccessories.co.za.png" alt="DSH Accessories homepage" loading="lazy" />
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">DSH Accessories</h3>
+            <p class="project-card__desc">A full e-commerce platform and admin system for a Pretoria-based car styling and accessories retailer, built for a paying client and live in production.</p>
+            <div class="project-card__tech">
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">Supabase</span>
+              <span class="tech-chip">Tailwind CSS</span>
+            </div>
+            <details class="project-details">
+              <summary>Project Details <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="project-details__body">
+                <h4>Features Implemented</h4>
+                <ul>
+                  <li>Product catalogue with search, filtering, and a Vehicle Finder (parts by make and model)</li>
+                  <li>Cart, checkout, and online payments via Yoco</li>
+                  <li>Customer accounts with order history</li>
+                  <li>Admin dashboard for products, inventory, orders, sales reports, customers, and vehicles</li>
+                  <li>Self-service content management for the homepage, gallery, and reviews</li>
+                </ul>
+                <h4>Architecture</h4>
+                <p>A React 19 + TypeScript single-page app (Vite, Tailwind CSS v4) with a public storefront and a separate admin dashboard, backed by Supabase for the product catalogue, orders, authentication, and image storage.</p>
+                <h4>Challenges</h4>
+                <p>Building a vehicle-based parts finder that reliably matches accessories to make and model, and keeping the storefront and admin dashboard consistent against one Supabase schema while payments settle through Yoco.</p>
+                <h4>Future Enhancements</h4>
+                <p>Customer loyalty rewards and expanded sales analytics for the admin dashboard.</p>
+              </div>
+            </details>
+            <div class="project-card__actions">
+              <span class="btn btn--disabled btn--sm" aria-disabled="true">GitHub (Private)</span>
+              <a href="https://dshaccessories.co.za/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
 
         <!-- SmartSpend -->
         <article class="glass-card project-card reveal">
@@ -418,81 +450,6 @@
                 Live Demo
               </a>
             </div>
-          </div>
-        </article>
-
-        <!-- Trailer Hub -->
-        <article class="glass-card project-card reveal">
-          <div class="project-card__media" data-code="04">
-            <img src="assets/images/trailerweb-img.png" alt="Trailer Hub homepage" loading="lazy" />
-          </div>
-          <div class="project-card__body">
-            <h3 class="project-card__title">Trailer Hub</h3>
-            <p class="project-card__desc">A trailer rental marketplace connecting trailer owners with renters across South Africa, built with a small development team.</p>
-            <div class="project-card__tech">
-              <span class="tech-chip">HTML</span>
-              <span class="tech-chip">CSS</span>
-              <span class="tech-chip">PHP</span>
-              <span class="tech-chip">MySQL</span>
-            </div>
-            <details class="project-details">
-              <summary>Project Details <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-              <div class="project-details__body">
-                <h4>Features Implemented</h4>
-                <ul><li>Trailer booking system</li><li>Fleet solutions for businesses</li><li>Owner &amp; renter accounts</li></ul>
-                <h4>Architecture</h4>
-                <p>Server-rendered PHP application backed by a normalised MySQL schema for trailer listings, users, and bookings.</p>
-                <h4>Challenges</h4>
-                <p>Structuring the database so trailer owners and renters share the same core user model while supporting different booking and fleet-management permissions.</p>
-                <h4>Future Enhancements</h4>
-                <p>Online payments and a real-time availability calendar.</p>
-              </div>
-            </details>
-            <div class="project-card__actions">
-<<<<<<< HEAD
-              <a href="https://github.com/shaunmakhobo/Pull-Thru-Trailer-Rentals" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">GitHub</a>
-              <span class="btn btn--disabled btn--sm" aria-disabled="true">Live Demo (N/A)</span>
-=======
-              <span class="btn btn--disabled btn--sm" aria-disabled="true">GitHub - private</span>
-              <span class="btn btn--disabled btn--sm" aria-disabled="true">Live Demo — N/A</span>
->>>>>>> d46bd8234632e0139a61552237b00ac5a264f96f
-            </div>
-          </div>
-        </article>
-
-        <!-- Fontis Fine Dine -->
-        <article class="glass-card project-card reveal">
-          <div class="project-card__media" data-code="05">
-            <img src="assets/images/Fontis-img.png" alt="Fontis Fine Dine landing page" loading="lazy" />
-          </div>
-          <div class="project-card__body">
-            <h3 class="project-card__title">Fontis Fine Dine</h3>
-            <p class="project-card__desc">A restaurant marketing website built with a team to improve online visibility and ease of access for customers.</p>
-            <div class="project-card__tech">
-              <span class="tech-chip">HTML</span>
-              <span class="tech-chip">CSS</span>
-              <span class="tech-chip">JavaScript</span>
-            </div>
-            <details class="project-details">
-              <summary>Project Details <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
-              <div class="project-details__body">
-                <h4>Features Implemented</h4>
-                <ul><li>Menu showcase</li><li>Contact &amp; location info</li><li>Responsive design</li></ul>
-                <h4>Architecture</h4>
-                <p>Static marketing site with a component-based layout, optimised for fast load times and mobile browsing.</p>
-                <h4>Challenges</h4>
-                <p>Translating the restaurant's brand identity into a clean digital presence within a tight team timeline.</p>
-                <h4>Future Enhancements</h4>
-                <p>Online table reservations.</p>
-              </div>
-            </details>
-            <div class="project-card__actions">
-              <a href="https://github.com/ThabisoMakhobo/Fontis-Fine-Dine-Web" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">GitHub</a>
-              <a href="http://fontis-fine-dine.gamer.free/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7Z"/></svg>
-                Live Demo
-              </a>
-             </div>
           </div>
         </article>
 

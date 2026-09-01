@@ -34,13 +34,13 @@
   --border: rgba(255, 255, 255, 0.09);
   --border-strong: rgba(255, 255, 255, 0.16);
 
-  /* Brand gradient */
-  --blue: #2563eb;
-  --blue-dim: #1e3a8a;
-  --cyan: #38bdf8;
-  --sky: #7dd3fc;
-  --gradient: linear-gradient(135deg, var(--blue), var(--cyan));
-  --gradient-soft: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(56, 189, 248, 0.15));
+  /* Accent: plain black + lime green, no gradients */
+  --blue: #a6e000;
+  --blue-dim: #5c7d00;
+  --cyan: #c6f24d;
+  --sky: #e4f9a8;
+  --gradient: var(--blue);
+  --gradient-soft: rgba(166, 224, 0, 0.15);
 
   /* Text */
   --text-primary: #f5f5f7;
@@ -122,7 +122,7 @@ h1, h2, h3, h4 {
 
 ::selection {
   background: var(--blue);
-  color: #fff;
+  color: #0b0b0c;
 }
 
 /* Scrollbar */
@@ -139,7 +139,7 @@ h1, h2, h3, h4 {
   top: -100px;
   left: 16px;
   background: var(--blue);
-  color: #fff;
+  color: #0b0b0c;
   padding: 10px 18px;
   border-radius: var(--radius-sm);
   z-index: 999;
@@ -193,10 +193,7 @@ h1, h2, h3, h4 {
 }
 
 .glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.35;
+  display: none;
 }
 
 .glow--one {
@@ -247,12 +244,10 @@ h1, h2, h3, h4 {
 
 .btn--gradient {
   background: var(--gradient);
-  color: #fff;
-  box-shadow: 0 8px 24px -8px rgba(37, 99, 235, 0.55);
+  color: #0b0b0c;
 }
 .btn--gradient:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px -8px rgba(56, 189, 248, 0.6);
 }
 
 .btn--outline {
@@ -458,7 +453,6 @@ h1, h2, h3, h4 {
   height: 7px;
   border-radius: 50%;
   background: #34d399;
-  box-shadow: 0 0 8px #34d399;
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -546,7 +540,7 @@ h1, h2, h3, h4 {
 }
 
 .social-icon:hover {
-  color: #fff;
+  color: #0b0b0c;
   border-color: transparent;
   background: var(--gradient);
   transform: translateY(-3px);
@@ -711,16 +705,8 @@ main,
   filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.55));
 }
 
-/* Soft radial glow behind the cutout, standing in for a hard card background */
 .portrait-frame__grid {
-  position: absolute;
-  inset: -12%;
-  z-index: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.32), rgba(37, 99, 235, 0.16) 45%, transparent 72%);
-  filter: blur(10px);
-  animation: pulse 5s ease-in-out infinite;
+  display: none;
 }
 
 .floating-chip {
@@ -735,9 +721,9 @@ main,
   box-shadow: 0 12px 24px -8px rgba(0,0,0,0.5);
   animation: floaty 5s ease-in-out infinite;
 }
-.floating-chip--1 { top: 8%; left: -6%; color: #93c5fd; animation-delay: 0s; }
-.floating-chip--2 { top: 46%; right: -10%; color: #67e8f9; animation-delay: 1.2s; }
-.floating-chip--3 { bottom: 12%; left: -10%; color: #7dd3fc; animation-delay: 2.4s; }
+.floating-chip--1 { top: 8%; left: -4%; color: #c6f24d; animation-delay: 0s; }
+.floating-chip--2 { top: 46%; right: -4%; color: #b8e847; animation-delay: 1.2s; }
+.floating-chip--3 { bottom: 12%; left: -5%; color: #e4f9a8; animation-delay: 2.4s; }
 
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
@@ -783,7 +769,7 @@ main,
   font-family: var(--font-mono);
   font-size: 0.72rem;
   line-height: 1.7;
-  color: #93c5fd;
+  color: #c6f24d;
   white-space: pre-wrap;
   min-height: 130px;
 }
@@ -1087,8 +1073,8 @@ main,
   font-size: 0.72rem;
   padding: 5px 11px;
   border-radius: 100px;
-  background: rgba(37, 99, 235, 0.14);
-  color: #93c5fd;
+  background: rgba(166, 224, 0, 0.16);
+  color: #c6f24d;
 }
 
 .project-card__actions {
@@ -1191,7 +1177,7 @@ main,
   position: relative;
   margin-bottom: 24px;
   border-color: var(--border-strong);
-  background: linear-gradient(160deg, rgba(37, 99, 235, 0.1), rgba(56, 189, 248, 0.04));
+  background: linear-gradient(160deg, rgba(166, 224, 0, 0.1), rgba(198, 242, 77, 0.04));
 }
 
 .project-spotlight__badge {
@@ -1200,7 +1186,7 @@ main,
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #fff;
+  color: #0b0b0c;
   background: var(--gradient);
   padding: 6px 14px;
   border-radius: 100px;
@@ -1426,6 +1412,7 @@ main,
 .back-to-top:hover {
   background: var(--gradient);
   border-color: transparent;
+  color: #0b0b0c;
 }
 
 /* ---------------------------------------------------------------

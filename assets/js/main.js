@@ -192,7 +192,7 @@ function initParticles() {
 
   let width, height, particles;
 
-  const palette = ['rgba(37,99,235,0.6)', 'rgba(56,189,248,0.6)', 'rgba(125,211,252,0.5)'];
+  const palette = ['rgba(166,224,0,0.6)', 'rgba(198,242,77,0.6)', 'rgba(228,249,168,0.5)'];
 
   function resize() {
     width = canvas.width = container.offsetWidth;
