@@ -1,5 +1,5 @@
 /* =================================================================
-   THABISO MAKHOBO - DEVELOPER PORTFOLIO
+   THABISO MAKHOBO — DEVELOPER PORTFOLIO
    Modular vanilla JS: each feature is self-contained and initialised
    from the bottom of the file once the DOM is ready.
 ================================================================= */
@@ -148,6 +148,29 @@ function initCounters() {
 }
 
 /* -----------------------------------------------------------------
+   Skill / learning progress bars
+----------------------------------------------------------------- */
+function initSkillBars() {
+  const bars = document.querySelectorAll('.skill-bars__fill');
+  if (!bars.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.style.width = `${el.dataset.width}%`;
+          obs.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  bars.forEach((bar) => observer.observe(bar));
+}
+
+/* -----------------------------------------------------------------
    Hero terminal card: typewriter effect
 ----------------------------------------------------------------- */
 function initTypewriter() {
@@ -156,8 +179,8 @@ function initTypewriter() {
 
   const snippet = `const developer = {
   name: "Thabiso Makhobo",
-  role: "Backend & Web Developer",
-  stack: ["C#", "React", "SQL"],
+  role: "Backend Developer",
+  stack: ["C#", "SQL", "ASP.NET"],
   status: "available"
 };`;
 
@@ -192,7 +215,7 @@ function initParticles() {
 
   let width, height, particles;
 
-  const palette = ['rgba(166,224,0,0.55)', 'rgba(198,242,77,0.5)', 'rgba(92,125,0,0.4)'];
+  const palette = ['rgba(139,92,246,0.6)', 'rgba(236,72,153,0.6)', 'rgba(217,70,239,0.5)'];
 
   function resize() {
     width = canvas.width = container.offsetWidth;
@@ -264,7 +287,7 @@ function initContactForm() {
     }
 
     const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n- ${name} (${email})`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
     window.location.href = `mailto:shaunmakhobo@gmail.com?subject=${subject}&body=${body}`;
 
     status.style.color = '#8ef0b5';
@@ -305,6 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initScrollReveal();
   initCounters();
+  initSkillBars();
   initTypewriter();
   initParticles();
   initContactForm();
