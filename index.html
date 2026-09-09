@@ -1,96 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thabiso's Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>Thabiso Makhobo | Software Developer, Backend &amp; Mobile, Pretoria South Africa</title>
+  <meta name="description" content="Thabiso Shaun Charles Makhobo, Software Developer specialising in Backend and Mobile Development. Building practical software solutions with C#, ASP.NET Core, Kotlin, and SQL from Pretoria, South Africa." />
+  <meta name="keywords" content="Thabiso Makhobo, backend developer, mobile developer, software developer Pretoria, C# developer, ASP.NET Core, Kotlin developer, Android developer, software solutions, South Africa" />
+  <meta name="author" content="Thabiso Shaun Charles Makhobo" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Thabiso Makhobo | Software Developer, Backend & Mobile" />
+  <meta property="og:description" content="Software Developer specialising in Backend and Mobile Development. I build practical software solutions that solve real-world problems." />
+  <meta property="og:locale" content="en_ZA" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Thabiso Makhobo | Software Developer, Backend & Mobile" />
+  <meta name="twitter:description" content="Software Developer specialising in Backend and Mobile Development." />
+
+  <link rel="icon" type="image/png" href="assets/images/Logo_no_bg.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Thabiso Shaun Charles Makhobo",
+    "jobTitle": "Software Developer",
+    "description": "Software Developer specialising in Backend and Mobile Development, building practical software solutions with C#, ASP.NET Core, Kotlin, and SQL.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pretoria",
+      "addressCountry": "South Africa"
+    },
+    "email": "mailto:shaunmakhobo@gmail.com",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "IIE Rosebank College"
+    },
+    "sameAs": [
+      "https://github.com/shaunmakhobo",
+      "https://www.linkedin.com/in/thabiso-makhobo-667527289/"
+    ]
+  }
+  </script>
 </head>
-
 <body>
-  <div class="top-navigation">
 
-    <div class="logo-name">
-      <img src="assets/images/Logo_no_bg.png" alt="">
-      <h1>Thabiso Makhobo</h1>
-    </div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <div class="page-navigation">
-      <header>
-       <nav>     
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Experience</a></li>
-          <li><a href="#">Specializations</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Education</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-       </nav>
-    </header>
-    </div>
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="wrap nav__row">
+      <a href="#home" class="nav__brand">
+        <img src="assets/images/Logo_no_bg.png" alt="" class="nav__brand-mark" />
+        Thabiso Makhobo
+      </a>
 
-    <div class="engagement-btn">
-      <button id="connectBtn" href="#">Let's Connect</button>
-    </div>
-  </div>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-  <section id="Home" class="home-section">
-    <div class="main-content">
-      <div class="main-content-heading">
-         <p class="eyebrow reveal"><span class="eyebrow__bracket">&lt;</span>Software Developer<span class="eyebrow__bracket">/&gt;</span></p>
-         <h1>Thabiso Shaun <br> Charles Makhobo</h1>
-         <p>I build practical software solutions that solve real-world problems through backend and mobile technologies, from personal finance apps to internal business systems.</p>
+      <div class="nav__cta">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i class="ph ph-sun theme-toggle__icon theme-toggle__icon--sun"></i>
+          <i class="ph ph-moon theme-toggle__icon theme-toggle__icon--moon"></i>
+        </button>
+        <a href="Thabiso Shaun Charles Makhobo.pdf" download class="btn btn--outline btn--sm">Download CV</a>
+        <a href="#contact" class="btn btn--primary btn--sm">Let's talk</a>
       </div>
-      <div class="main-content-btns">
-         <div class="hero__actions reveal">
-            <a href="#projects" class="btn btn--gradient">View Projects</a>
+
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">
+        <i class="ph ph-list"></i>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero wrap">
+      <div class="hero__panel">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <span class="badge reveal">
+            <span class="badge__dot"></span>
+            Available for work
+          </span>
+
+          <h1 class="hero__title reveal">Backend and mobile software, built <em>right</em>.</h1>
+
+          <p class="hero__subtext reveal">Graduate software developer in Pretoria, South Africa, building backend systems and Android apps for real clients and real problems.</p>
+
+          <div class="hero__actions reveal">
+            <a href="#projects" class="btn btn--primary">View projects</a>
             <a href="Thabiso Shaun Charles Makhobo.pdf" download class="btn btn--outline">Download CV</a>
-         </div>
-         <div class="hero__actions hero__actions--secondary reveal">
-            <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.66.5 12.03c0 5.1 3.29 9.42 7.86 10.96.57.1.78-.25.78-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.6.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.27 5.68.42.36.78 1.07.78 2.16v3.2c0 .3.21.66.79.55A10.53 10.53 0 0 0 23.5 12.03C23.5 5.66 18.35.5 12 .5Z"/></svg>
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/thabiso-makhobo-667527289/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.68H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
-              LinkedIn
-            </a>
-            <a href="#contact" class="btn btn--ghost btn--sm">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="m3 6 9 7 9-7"/></svg>
-              Contact Me
-            </a>
           </div>
-      </div>
-       <div class="hero-skill-count">
-            <dl class="hero__stats reveal">
-            <div class="stat">
-              <dt class="stat__value"><span class="counter" data-target="8" data-suffix="+">0</span></dt>
-              <dd class="stat__label">Software Solutions Shipped</dd>
+
+          <dl class="hero__stats reveal">
+            <div>
+              <dt class="stat__value">8+</dt>
+              <dd class="stat__label">Solutions shipped</dd>
             </div>
-            <div class="stat">
-              <dt class="stat__value"><span class="counter" data-target="2">0</span></dt>
-              <dd class="stat__label">Core Specializations</dd>
+            <div>
+              <dt class="stat__value">3</dt>
+              <dd class="stat__label">Live client projects</dd>
             </div>
-            <div class="stat">
-              <dt class="stat__value"><span class="counter" data-target="1" data-suffix="+">0</span></dt>
-              <dd class="stat__label">Years Professional Experience</dd>
+            <div>
+              <dt class="stat__value">2</dt>
+              <dd class="stat__label">Core specializations</dd>
             </div>
-            <div class="stat">
-              <dt class="stat__value"><span class="counter" data-target="100" data-suffix="%">0</span></dt>
-              <dd class="stat__label">Delivery Focus</dd>
+            <div>
+              <dt class="stat__value">1+ yr</dt>
+              <dd class="stat__label">Professional experience</dd>
             </div>
           </dl>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero__frame">
+            <img src="assets/images/mainImage (2).jpeg" alt="Thabiso Shaun Charles Makhobo" />
           </div>
-    </div>
+          <div class="hero__card">
+            <span class="hero__card-arrow"><i class="ph ph-arrow-up-right"></i></span>
+            <p class="hero__card-label">Select a project</p>
+            <p class="hero__card-title">Available for new work</p>
+            <p class="hero__card-text">Share a few details about what you're building and I'll get back with next steps.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
 
-    <div class="main-image">
-      <img src="assets/images/mainImage.jpeg" alt="">
+    <!-- ============ WORKED WITH ============ -->
+    <section class="clients wrap">
+      <div class="clients__row">
+        <span class="clients__label">Real clients I've built for</span>
+        <div class="clients__marks">
+          <a href="https://dshaccessories.co.za/" target="_blank" rel="noopener noreferrer" class="clients__mark">DSH Accessories</a>
+          <a href="https://fundanitours.co.za/" target="_blank" rel="noopener noreferrer" class="clients__mark">Fundani Tours</a>
+          <a href="https://el-shaddai-church-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="clients__mark">EL Shaddai Church</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SPECIALIZATIONS ============ -->
+    <section id="specializations" class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="section-title">What I build</h2>
+          <p class="section-lede">Two core specializations, applied across backend systems, mobile apps, and full business solutions.</p>
+        </div>
+
+        <div class="benefits__grid">
+          <article class="benefit-card benefit-card--invert reveal">
+            <div class="benefit-card__icon"><i class="ph ph-terminal-window"></i></div>
+            <h3 class="benefit-card__title">Backend Development</h3>
+            <p class="benefit-card__desc">I design and develop scalable backend systems using modern software engineering practices, focused on reliability, maintainability, and performance.</p>
+            <div class="benefit-card__tech">
+              <span class="tech-chip">C#</span>
+              <span class="tech-chip">ASP.NET Core</span>
+              <span class="tech-chip">SQL</span>
+              <span class="tech-chip">OOP</span>
+              <span class="tech-chip">LINQ</span>
+            </div>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-card__icon"><i class="ph ph-device-mobile"></i></div>
+            <h3 class="benefit-card__title">Mobile Development</h3>
+            <p class="benefit-card__desc">I build Android applications that solve practical problems and provide intuitive user experiences.</p>
+            <div class="benefit-card__tech">
+              <span class="tech-chip">Kotlin</span>
+              <span class="tech-chip">Firebase</span>
+              <span class="tech-chip">Room Database</span>
+              <span class="tech-chip">Android Studio</span>
+            </div>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-card__icon"><i class="ph ph-flow-arrow"></i></div>
+            <h3 class="benefit-card__title">Software Solutions Development</h3>
+            <p class="benefit-card__desc">I turn business requirements into working software, from data models to finished, deployable systems, not just isolated scripts or features.</p>
+            <div class="benefit-card__tech">
+              <span class="tech-chip">C#</span>
+              <span class="tech-chip">SQL</span>
+              <span class="tech-chip">React</span>
+              <span class="tech-chip">Supabase</span>
+            </div>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-card__icon"><i class="ph ph-buildings"></i></div>
+            <h3 class="benefit-card__title">Business Systems Development</h3>
+            <p class="benefit-card__desc">I build systems that support real operational workflows, attendance, claims, bookings, and administration, so organisations can replace manual processes with reliable software.</p>
+            <div class="benefit-card__tech">
+              <span class="tech-chip">SQL Server</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">PHP</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS + STACK ============ -->
+    <section id="process" class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="section-title">How I work</h2>
+          <p class="section-lede">A simple process I follow on every project, from a first-time client build to a personal system.</p>
+        </div>
+
+        <div class="process__layout">
+          <div class="process__tabs reveal" id="processTabs">
+            <button class="process__tab is-active" data-tab="1">
+              <span class="process__tab-num">01</span>
+              <span class="process__tab-body">
+                <h3>Understand</h3>
+                <p>I start by understanding the real problem, not just the feature request, talking through goals, constraints, and users before any code gets written.</p>
+              </span>
+            </button>
+            <button class="process__tab" data-tab="2">
+              <span class="process__tab-num">02</span>
+              <span class="process__tab-body">
+                <h3>Design the system</h3>
+                <p>I plan the data model and architecture first, so backend, database, and UI decisions stay consistent as the project grows.</p>
+              </span>
+            </button>
+            <button class="process__tab" data-tab="3">
+              <span class="process__tab-num">03</span>
+              <span class="process__tab-body">
+                <h3>Build and ship</h3>
+                <p>I build in working increments and test as I go, getting real functionality in front of you early instead of one big reveal at the end.</p>
+              </span>
+            </button>
+            <button class="process__tab" data-tab="4">
+              <span class="process__tab-num">04</span>
+              <span class="process__tab-body">
+                <h3>Support after launch</h3>
+                <p>Launch isn't the finish line. I stay available for fixes, small changes, and questions after handover.</p>
+              </span>
+            </button>
+          </div>
+
+          <div class="process__stack reveal">
+            <div class="stack__intro">
+              <h3>The tools behind the work</h3>
+              <p>My day-to-day stack for backend, mobile, and full-stack builds.</p>
+            </div>
+            <div class="stack__grid">
+              <div class="stack-card"><i class="ph ph-code"></i><span>C#</span></div>
+              <div class="stack-card"><i class="ph ph-cpu"></i><span>ASP.NET Core</span></div>
+              <div class="stack-card"><i class="ph ph-android-logo"></i><span>Kotlin</span></div>
+              <div class="stack-card"><i class="ph ph-fire-simple"></i><span>Firebase</span></div>
+              <div class="stack-card"><i class="ph ph-database"></i><span>SQL / MySQL</span></div>
+              <div class="stack-card"><i class="ph ph-git-branch"></i><span>Git &amp; GitHub</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="wrap about__grid">
+        <div class="about__frame reveal">
+          <img src="assets/images/profileimg.jpeg" alt="Thabiso Shaun Charles Makhobo" />
+        </div>
+
+        <div class="reveal">
+          <h2 class="about__title">Good code starts with understanding the problem.</h2>
+          <p class="about__body">I'm a software developer based in Pretoria, South Africa, with practical experience designing and building software across mobile, web, desktop, and productivity platforms. I graduated with distinctions in Information Technology (Software Development) from IIE Rosebank College, with a strong foundation in object-oriented programming, backend development, and mobile application development.</p>
+          <p class="about__body" style="margin-top: 16px;">I build Android applications using Kotlin, Firebase, and Room Database, alongside backend and full-stack solutions using C# and .NET technologies. I care about solving real problems with software that's reliable, maintainable, and actually gets used.</p>
+
+          <div class="about__stats">
+            <div>
+              <p class="about__stat-value">Distinctions</p>
+              <p class="about__stat-label">Diploma in IT, IIE Rosebank College</p>
+            </div>
+            <div>
+              <p class="about__stat-value">1+ yr</p>
+              <p class="about__stat-label">Professional dev experience</p>
+            </div>
+            <div>
+              <p class="about__stat-value">Available</p>
+              <p class="about__stat-label">For freelance and full-time roles</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Selected work</span>
+          <h2 class="section-title">Software I've shipped</h2>
+          <p class="section-lede">A mix of paying-client builds, team projects, and personal systems.</p>
+        </div>
+
+        <!-- MOS: flagship -->
+        <article class="spotlight reveal">
+          <span class="spotlight__badge">Flagship project</span>
+          <h3 class="spotlight__title">MOS <span>Makhobo Operating System</span></h3>
+          <p class="spotlight__desc">A personal operating system for managing finances, goals, habits, and projects, replacing scattered apps and spreadsheets with one connected system.</p>
+
+          <div class="spotlight__features">
+            <span class="feature-chip"><i class="ph ph-wallet"></i>Financial management</span>
+            <span class="feature-chip"><i class="ph ph-target"></i>Goal tracking</span>
+            <span class="feature-chip"><i class="ph ph-chart-bar"></i>Monthly reports</span>
+            <span class="feature-chip"><i class="ph ph-repeat"></i>Habit tracking</span>
+            <span class="feature-chip"><i class="ph ph-kanban"></i>Project management</span>
+          </div>
+
+          <div class="spotlight__tech">
+            <span class="tech-chip">React</span>
+            <span class="tech-chip">TypeScript</span>
+            <span class="tech-chip">Vite</span>
+            <span class="tech-chip">Tailwind CSS</span>
+            <span class="tech-chip">Supabase</span>
+            <span class="tech-chip">ASP.NET Core (planned)</span>
+          </div>
+
+          <div class="spotlight__actions">
+            <span class="btn btn--disabled btn--sm">GitHub, private</span>
+            <span class="btn btn--disabled btn--sm">Live demo, private</span>
+          </div>
+        </article>
+
+        <div class="projects__grid">
+          <!-- DSH Accessories -->
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/dshaccessories.co.za.png" alt="DSH Accessories homepage" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">DSH Accessories</h3>
+              <p class="project-card__desc">A full e-commerce platform and admin system for a Pretoria-based car styling and accessories retailer, built for a paying client and live in production.</p>
+              <div class="project-card__tech">
+                <span class="tech-chip">React</span>
+                <span class="tech-chip">TypeScript</span>
+                <span class="tech-chip">Supabase</span>
+              </div>
+              <details class="project-details">
+                <summary>Project details <i class="ph ph-caret-down"></i></summary>
+                <div class="project-details__body">
+                  <h4>Features</h4>
+                  <ul>
+                    <li>Product catalogue with a vehicle finder by make and model</li>
+                    <li>Cart, checkout, and online payments via Yoco</li>
+                    <li>Admin dashboard for products, orders, and sales reports</li>
+                  </ul>
+                  <h4>Architecture</h4>
+                  <p>React 19 + TypeScript (Vite, Tailwind CSS v4), a public storefront plus a separate admin dashboard, backed by Supabase for catalogue, orders, auth, and image storage.</p>
+                </div>
+              </details>
+              <div class="project-card__actions">
+                <span class="btn btn--disabled btn--sm">GitHub, private</span>
+                <a href="https://dshaccessories.co.za/" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">Live demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Fundani Tours -->
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/Fundani-img.png" alt="Fundani Tours homepage" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Fundani Tours</h3>
+              <p class="project-card__desc">A travel marketing website for a Destination Management Company, with destination search and dedicated pages for South African parks.</p>
+              <div class="project-card__tech">
+                <span class="tech-chip">WordPress</span>
+              </div>
+              <details class="project-details">
+                <summary>Project details <i class="ph ph-caret-down"></i></summary>
+                <div class="project-details__body">
+                  <h4>Features</h4>
+                  <ul>
+                    <li>Destination and duration search</li>
+                    <li>Parks of South Africa info pages</li>
+                  </ul>
+                  <h4>Architecture</h4>
+                  <p>Built on WordPress, structured around destination discovery, with a home page search widget linking through to destination and parks content pages.</p>
+                </div>
+              </details>
+              <div class="project-card__actions">
+                <a href="https://fundanitours.co.za/" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">Live demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- EL Shaddai Church -->
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/El_Shaddai-img.png" alt="EL Shaddai Church landing page" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">EL Shaddai Church</h3>
+              <p class="project-card__desc">A responsive church website for event planning, prayer booking, and administrative task management.</p>
+              <div class="project-card__tech">
+                <span class="tech-chip">TypeScript</span>
+                <span class="tech-chip">HTML</span>
+                <span class="tech-chip">CSS</span>
+              </div>
+              <details class="project-details">
+                <summary>Project details <i class="ph ph-caret-down"></i></summary>
+                <div class="project-details__body">
+                  <h4>Features</h4>
+                  <ul>
+                    <li>Event planning</li>
+                    <li>Prayer booking</li>
+                    <li>Admin task management</li>
+                  </ul>
+                  <h4>Architecture</h4>
+                  <p>A TypeScript front end built around modular components for events, bookings, and admin tasks, with accessibility and mobile responsiveness as first-class requirements.</p>
+                </div>
+              </details>
+              <div class="project-card__actions">
+                <span class="btn btn--disabled btn--sm">GitHub, private</span>
+                <a href="https://el-shaddai-church-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">Live demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SmartSpend -->
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/Smartspend-DashBoard.png" alt="SmartSpend dashboard screen" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">SmartSpend</h3>
+              <p class="project-card__desc">A personal finance Android app for budgeting, expense tracking, and financial analytics.</p>
+              <div class="project-card__tech">
+                <span class="tech-chip">Kotlin</span>
+                <span class="tech-chip">Firebase</span>
+                <span class="tech-chip">Room</span>
+              </div>
+              <details class="project-details">
+                <summary>Project details <i class="ph ph-caret-down"></i></summary>
+                <div class="project-details__body">
+                  <h4>Features</h4>
+                  <ul>
+                    <li>Budget tracking and expense analytics</li>
+                    <li>PDF / CSV reports</li>
+                    <li>Firebase authentication</li>
+                  </ul>
+                  <h4>Architecture</h4>
+                  <p>MVVM with a local Room database as the source of truth, synced to Firebase for authentication and cloud backup.</p>
+                </div>
+              </details>
+              <div class="project-card__actions">
+                <a href="https://github.com/ThabisoMakhobo/SmartSpend" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">GitHub</a>
+                <a href="https://youtu.be/gnKUaM_WH-g" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">Watch demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Healthify -->
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/Healthify.png" alt="Healthify weekly activity screen" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Healthify</h3>
+              <p class="project-card__desc">A health and wellness Android application integrating live data through REST APIs. Built with a team.</p>
+              <div class="project-card__tech">
+                <span class="tech-chip">Kotlin</span>
+                <span class="tech-chip">Firebase</span>
+                <span class="tech-chip">REST APIs</span>
+              </div>
+              <details class="project-details">
+                <summary>Project details <i class="ph ph-caret-down"></i></summary>
+                <div class="project-details__body">
+                  <h4>Features</h4>
+                  <ul>
+                    <li>Weekly training goal tracking</li>
+                    <li>Live weather widget and meal logging</li>
+                  </ul>
+                  <h4>Architecture</h4>
+                  <p>Android app consuming external REST APIs for weather and health data, with Firebase handling authentication and user profiles.</p>
+                </div>
+              </details>
+              <div class="project-card__actions">
+                <a href="https://github.com/MelvinSeilane02/Healthify" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">GitHub</a>
+                <a href="https://youtu.be/RipgBzHuHmc?si=wP11LqGWYNPKAfYy" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--sm">Watch demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Portfolio -->
+          <article class="project-card reveal">
+            <div class="project-card__media">
+              <img src="assets/images/portfolio-img.png" alt="Portfolio website homepage" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Portfolio Website</h3>
+              <p class="project-card__desc">This site: a hand-built developer portfolio focused on performance and clean, accessible code.</p>
+              <div class="project-card__tech">
+                <span class="tech-chip">HTML</span>
+                <span class="tech-chip">CSS</span>
+                <span class="tech-chip">JavaScript</span>
+              </div>
+              <div class="project-card__actions">
+                <a href="#home" class="btn btn--outline btn--sm">You're looking at it</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <!-- <section id="testimonials" class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="section-title">What clients say</h2>
+          <p class="section-lede">Real testimonials from clients I've worked with, added as they come in.</p>
+        </div>
+
+        
+        <div class="testimonials__grid">
+          <article class="testimonial-card reveal">
+            <span class="testimonial-card__tag">Awaiting testimonial</span>
+            <p class="testimonial-card__quote">"[Add a short quote from Neo Phatla about working together on DSH Accessories.]"</p>
+            <div class="testimonial-card__meta">
+              <p class="testimonial-card__name">DSH Accessories</p>
+              <p class="testimonial-card__role">Client</p>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <span class="testimonial-card__tag">Awaiting testimonial</span>
+            <p class="testimonial-card__quote">"[Add a short quote from Peterson Mahlangu about the Fundani Tours website.]"</p>
+            <div class="testimonial-card__meta">
+              <p class="testimonial-card__name">Peterson Mahlangu</p>
+              <p class="testimonial-card__role">Managing Director, Fundani Tours</p>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <span class="testimonial-card__tag">Awaiting testimonial</span>
+            <p class="testimonial-card__quote">"[Add a short quote about the EL Shaddai Church website.]"</p>
+            <div class="testimonial-card__meta">
+              <p class="testimonial-card__name">EL Shaddai Community Church</p>
+              <p class="testimonial-card__role">Client</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ============ EDUCATION & EXPERIENCE ============ -->
+    <section id="education" class="section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="section-title">Education &amp; experience</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="reveal">
+            <p class="timeline__col-label">Education</p>
+            <div class="timeline__item">
+              <div class="timeline__item-head">
+                <h3 class="timeline__role">Diploma in Information Technology (Software Development)</h3>
+                <span class="timeline__period">2023 to 2025</span>
+              </div>
+              <p class="timeline__org">IIE Rosebank College</p>
+              <p class="timeline__notes">Graduated with distinctions. Completed Work Integrated Learning. Built multiple software solutions across mobile, web, and desktop platforms.</p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <p class="timeline__col-label">Experience</p>
+            <div class="timeline__item">
+              <div class="timeline__item-head">
+                <h3 class="timeline__role">Time and Attendance Clerk</h3>
+                <span class="timeline__period">Jan 2026 to present</span>
+              </div>
+              <p class="timeline__org">Northam Platinum, Eland Platinum Mine</p>
+              <p class="timeline__notes">Maintaining and verifying employee attendance records, generating operational reports, and resolving discrepancies with supervisors and HR.</p>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__item-head">
+                <h3 class="timeline__role">Software Development, client &amp; personal projects</h3>
+                <span class="timeline__period">2023 to present</span>
+              </div>
+              <p class="timeline__org">Academic, personal, and client work</p>
+              <p class="timeline__notes">Delivered client-focused website work for Fundani Tours and built backend, mobile, and web solutions using Agile methodologies and Azure DevOps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section contact">
+      <div class="wrap">
+        <h2 class="contact__title reveal">Let's build something together.</h2>
+        <p class="contact__lede reveal">Have a project in mind, or an opportunity to discuss? I'm available for freelance work and full-time roles.</p>
+
+        <div class="contact__actions reveal">
+          <a href="mailto:shaunmakhobo@gmail.com" class="btn btn--primary">Let's talk</a>
+          <a href="Thabiso Shaun Charles Makhobo.pdf" download class="btn btn--outline">Download CV</a>
+        </div>
+
+        <div class="contact__links reveal">
+          <a href="mailto:shaunmakhobo@gmail.com" class="contact__link"><i class="ph ph-envelope-simple"></i>shaunmakhobo@gmail.com</a>
+          <a href="tel:+27793761586" class="contact__link"><i class="ph ph-phone"></i>+27 79 376 1586</a>
+          <a href="https://wa.me/27793761586" target="_blank" rel="noopener noreferrer" class="contact__link"><i class="ph ph-whatsapp-logo"></i>WhatsApp</a>
+          <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" class="contact__link"><i class="ph ph-github-logo"></i>GitHub</a>
+          <a href="https://www.linkedin.com/in/thabiso-makhobo-667527289/" target="_blank" rel="noopener noreferrer" class="contact__link"><i class="ph ph-linkedin-logo"></i>LinkedIn</a>
+          <span class="contact__link"><i class="ph ph-map-pin"></i>Pretoria, South Africa</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap footer__row">
+      <p class="footer__text">&copy; <span id="year"></span> Thabiso Shaun Charles Makhobo. Designed and built by me.</p>
+      <div class="footer__socials">
+        <a href="https://github.com/shaunmakhobo" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+        <a href="https://www.linkedin.com/in/thabiso-makhobo-667527289/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:shaunmakhobo@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+      </div>
     </div>
-  </section>
-  
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
-
 </html>
