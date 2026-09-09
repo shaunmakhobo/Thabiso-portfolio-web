@@ -1309,6 +1309,15 @@ p {
     display: flex;
   }
 
+  /* backdrop-filter on .nav creates a containing block for fixed
+     descendants, which would collapse the open menu's box down to the
+     header's own height — drop it while the menu is open so the
+     overlay below positions against the full viewport instead. */
+  body.nav-open .nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   body.nav-open .nav__links {
     display: flex;
     position: fixed;
