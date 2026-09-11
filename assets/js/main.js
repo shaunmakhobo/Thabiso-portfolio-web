@@ -68,3 +68,46 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 })();
+
+/* -----------------------------------------------------------------
+   Animated stat counters (hero section)
+----------------------------------------------------------------- */
+function initCounters() {
+  const counters = document.querySelectorAll('.counter');
+  if (!counters.length) return;
+
+  const animate = (el) => {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    const suffix = el.dataset.suffix || '';
+
+    if (prefersReducedMotion) {
+      el.textContent = target + suffix;
+      return;
+    }
+
+    const duration = 1400;
+    const start = performance.now();
+
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animate(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  counters.forEach((el) => observer.observe(el));
+}
