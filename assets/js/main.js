@@ -179,7 +179,7 @@
 
        Therefore:
 
-       1 spotlight + 6 project cards = 7 projects
+       1 spotlight + N project cards (counted automatically)
     -------------------------------------------------------------- */
     var flagshipProjects =
       document.querySelectorAll(".spotlight").length;
